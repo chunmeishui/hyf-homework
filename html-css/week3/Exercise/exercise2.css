@@ -59,13 +59,24 @@
         width: 40%;
         border-radius: 55px;
         border: 2px solid red;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 150px;
+
     }
+    img{width: 90%;
+        padding-bottom: 50px;
+    }
+    .pal-img{width: 50%;}
     
-    .credit:hover {
+    .credit:hover,
+    .credit:focus{
         background-color: tomato;
         width: 50%;
         height: 150px;
         border-radius: 55px;
+        cursor:progress;
     }
     
     .payment input {
