@@ -1,0 +1,203 @@
+body {
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgb(243, 186, 186);
+    padding: 0 10px;
+}
+
+header {
+    width: 100%;
+}
+
+.logo-nav {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+    padding: 0;
+}
+
+.left-nav {
+    font-size: 1.25rem;
+    font-weight: 600;
+    width: 20%;
+    height: 70px;
+    background-color: rgb(252, 121, 98);
+}
+
+.right-nav {
+    font-size: 1.25rem;
+    font-weight: 600;
+    width: 40%;
+    height: 70px;
+    background-color: rgb(252, 121, 98);
+}
+
+.logo-nav li:hover,
+logo-nav li:focus {
+    background-color: rgb(243, 186, 186);
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+p {
+    color: rgb(75, 73, 71);
+    font-size: 1.25rem;
+}
+
+.progress-bar {
+    width: 90%;
+    height: 30px;
+    background-color: rgb(241, 230, 233);
+    border-radius: 20px;
+}
+
+.progress-fill {
+    width: 42%;
+    background-color: rgb(233, 117, 136);
+    height: 30px;
+    border-radius: 19px;
+}
+
+form {
+    width: 100%;
+}
+
+.email-pho {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+input {
+    width: 95%;
+    height: 35px;
+    margin-top: 10px;
+}
+
+label {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 10px;
+}
+
+.password {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.first {
+    margin-left: 1%;
+}
+
+.second {
+    margin-left: 0.5%
+}
+
+.selection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.selection div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.selection input {
+    text-align: end;
+}
+
+.button {
+    width: 100%;
+}
+
+.submit {
+    width: 150px;
+    height: 40px;
+    margin-top: 20px;
+    margin-left: 40%;
+    margin-bottom: 80px;
+    background-color: rgb(218, 124, 155);
+    color: darkblue;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+}
+
+@media screen and (min-width: 900px) {
+    form {
+        width: 100%;
+    }
+    .email-pho {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
+    input {
+        width: 280px;
+        height: 50px;
+        margin-top: 20px;
+    }
+    label {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin: 10px;
+    }
+    .password {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .first {
+        margin-left: 14%;
+    }
+    .second {
+        margin-left: 6%
+    }
+    .selection,
+    .selection div {
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        justify-content: center;
+    }
+    .selection {
+        width: 80%;
+        margin-bottom: 80px;
+    }
+    .selection input {
+        width: 30px;
+        height: 30px;
+    }
+    .submit {
+        width: 250px;
+        height: 50px;
+        margin-left: 70%;
+        font-size: 2rem;
+    }
+}

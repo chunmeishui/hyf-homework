@@ -1,0 +1,204 @@
+body {
+    width: 100%;
+    background-color: rgb(200, 233, 196);
+    margin: 0 auto;
+}
+
+nav {
+    width: 100%;
+}
+
+.logo-nav {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.left-nav {
+    font-size: 1.25rem;
+    font-weight: 600;
+    width: 15%;
+    height: 50px;
+    background-color: rgb(252, 121, 98);
+}
+
+.right-nav {
+    font-size: 1.25rem;
+    font-weight: 600;
+    width: 50%;
+    height: 50px;
+    background-color: rgb(252, 121, 98);
+}
+
+.logo-nav li:hover,
+logo-nav li:focus {
+    background-color: rgb(243, 186, 186);
+}
+
+.wrapper {
+    width: 100%;
+    background-color: rgb(247, 192, 237);
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper h1 {
+    text-align: center;
+}
+
+p {
+    padding: 10px;
+    line-height: 25px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-size: 1.25rem;
+}
+
+main {
+    background-color: rgb(247, 192, 237);
+    width: 100%;
+    padding-left: 10px;
+}
+
+.progress-bar {
+    width: 90%;
+    height: 30px;
+    background-color: rgb(241, 230, 233);
+    border-radius: 20px;
+}
+
+.progress-fill {
+    width: 12%;
+    background-color: rgb(233, 117, 136);
+    height: 30px;
+    border-radius: 19px;
+}
+
+main p {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+}
+
+.info input,
+.info select {
+    margin-bottom: 20px;
+    padding-left: 20px;
+    width: 50%;
+    height: 40px;
+}
+
+.profile {
+    width: 100%;
+}
+
+.profile textarea {
+    width: 90%;
+}
+
+.ship-address {
+    font-size: 1.25rem;
+}
+
+.ship-address input {
+    width: 50%;
+    height: 20px;
+}
+
+.submit {
+    width: 150px;
+    height: 50px;
+    margin-top: 20px;
+    margin-left: 50%;
+    background-color: rgb(218, 124, 155);
+    color: darkblue;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+@media screen and (min-width: 900px) {
+    body {
+        background-color: rgb(247, 200, 235);
+        width: 90%;
+    }
+    .left-nav,
+    .right-nav {
+        height: 100px;
+        margin-top: 50px;
+    }
+    .wrapper {
+        padding-left: 50px;
+        line-height: 40px;
+    }
+    .wrapper h1 {
+        text-align: left;
+        font-size: 3rem;
+    }
+    .name {
+        display: flex;
+        flex-direction: row;
+        padding-left: 10%;
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+    .name input {
+        width: 30%;
+    }
+    .info {
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+    .country {
+        width: 40%;
+        padding-left: 11%;
+    }
+    .street-address {
+        display: flex;
+        flex-direction: row;
+        padding-left: 7%;
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+    .street-address input {
+        width: 30%;
+        height: 40px;
+    }
+    main {
+        padding-left: 50px;
+    }
+    .profile {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+    .profile-label {
+        width: 18%;
+        font-size: 1.5rem;
+    }
+    .profile-fill {
+        width: 75%;
+        margin-top: 20px;
+    }
+    .ship-address {
+        font-size: 28px;
+    }
+    .ship-address input {
+        width: 50px;
+        height: 40px;
+    }
+    .submit {
+        margin-left: 70%;
+        margin-bottom: 100px;
+    }
+}
