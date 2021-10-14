@@ -2,10 +2,12 @@ body {
     width: 100%;
     background-color: rgb(200, 233, 196);
     margin: 0 auto;
+    padding: 0 15px;
 }
 
 nav {
     width: 100%;
+    margin-top: 50px;
 }
 
 .logo-nav {
