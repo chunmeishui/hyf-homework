@@ -42,7 +42,10 @@ nav {
 logo-nav li:focus {
     background-color: rgb(243, 186, 186);
 }
+.tittle-pic img{object-fit: cover;
+    max-width: 100%;
 
+}
 .wrapper {
     width: 100%;
     background-color: rgb(247, 192, 237);
@@ -93,6 +96,7 @@ main p {
     padding-left: 20px;
     width: 50%;
     height: 40px;
+ 
 }
 
 .profile {
