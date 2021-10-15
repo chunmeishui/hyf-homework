@@ -1,25 +1,23 @@
 body {
     width: 100%;
-    background-color: rgb(200, 233, 196);
     margin: 0 auto;
-    padding: 0 15px;
+    
 }
 
 nav {
-    width: 100%;
+  
     margin-top: 50px;
 }
 
 .logo-nav {
     list-style: none;
-    width: 100%;
+  
     display: flex;
-    flex-direction: row;
+ 
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    margin: 0;
-    padding: 0;
+ 
 }
 
 .left-nav {
@@ -36,21 +34,21 @@ nav {
     width: 50%;
     height: 50px;
     background-color: rgb(252, 121, 98);
+    
 }
 
 .logo-nav li:hover,
 logo-nav li:focus {
-    background-color: rgb(243, 186, 186);
+    background-color: rgb(195, 73, 199);
+    cursor: pointer;
 }
 .tittle-pic img{object-fit: cover;
     max-width: 100%;
 
 }
 .wrapper {
-    width: 100%;
     background-color: rgb(247, 192, 237);
-    margin: 0;
-    padding: 0;
+   
 }
 
 .wrapper h1 {
@@ -67,7 +65,7 @@ p {
 
 main {
     background-color: rgb(247, 192, 237);
-    width: 100%;
+  
     padding-left: 10px;
 }
 
@@ -76,6 +74,7 @@ main {
     height: 30px;
     background-color: rgb(241, 230, 233);
     border-radius: 20px;
+   
 }
 
 .progress-fill {
@@ -91,24 +90,33 @@ main p {
 }
 
 .info input,
-.info select {
+.info select
+ {
     margin-bottom: 20px;
     padding-left: 20px;
-    width: 50%;
+    width: 80%;
     height: 40px;
  
 }
-
-.profile {
-    width: 100%;
+form label,
+form input,
+form select{display: inline-block;
 }
 
-.profile textarea {
+form input,
+form select{display: flex;}
+.profile textarea {display: flex;
     width: 90%;
 }
+.country select{display: inline-flex;
+width: 90%;
+height: 40px;
+margin-bottom: 20px;}
+
 
 .ship-address {
     font-size: 1.25rem;
+    display: flex;
 }
 
 .ship-address input {
@@ -132,6 +140,7 @@ main p {
 a {
     text-decoration: none;
 }
+
 
 @media screen and (min-width: 900px) {
     body {
@@ -161,13 +170,14 @@ a {
     .name input {
         width: 30%;
     }
-    .info {
-        font-size: 1.5rem;
+  
+    .country{font-size: 1.5rem;
         font-weight: 400;
+        margin-left: 11%;
     }
-    .country {
-        width: 40%;
-        padding-left: 11%;
+    .country select{width: 3%;
+        display: inline-flex;
+        height: 50px;
     }
     .street-address {
         display: flex;
