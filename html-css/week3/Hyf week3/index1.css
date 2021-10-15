@@ -175,7 +175,7 @@ a {
         font-weight: 400;
         margin-left: 11%;
     }
-    .country select{width: 3%;
+    .country select{width: 33%;
         display: inline-flex;
         height: 50px;
     }
