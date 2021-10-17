@@ -1,3 +1,6 @@
 yellow
 red
 purple
+black
+orange
+ 
