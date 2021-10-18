@@ -1,23 +1,21 @@
 body {
     width: 100%;
     margin: 0 auto;
-    
 }
 
+
+/*first part of header*/
+
 nav {
-  
     margin-top: 50px;
 }
 
 .logo-nav {
     list-style: none;
-  
     display: flex;
- 
     justify-content: space-between;
     align-items: center;
     text-align: center;
- 
 }
 
 .left-nav {
@@ -34,7 +32,6 @@ nav {
     width: 50%;
     height: 50px;
     background-color: rgb(252, 121, 98);
-    
 }
 
 .logo-nav li:hover,
@@ -42,13 +39,14 @@ logo-nav li:focus {
     background-color: rgb(195, 73, 199);
     cursor: pointer;
 }
-.tittle-pic img{object-fit: cover;
-    max-width: 100%;
 
+.tittle-pic img {
+    object-fit: cover;
+    max-width: 100%;
 }
+
 .wrapper {
     background-color: rgb(247, 192, 237);
-   
 }
 
 .wrapper h1 {
@@ -65,7 +63,6 @@ p {
 
 main {
     background-color: rgb(247, 192, 237);
-  
     padding-left: 10px;
 }
 
@@ -74,11 +71,10 @@ main {
     height: 30px;
     background-color: rgb(241, 230, 233);
     border-radius: 20px;
-   
 }
 
 .progress-fill {
-    width: 12%;
+    width: 22%;
     background-color: rgb(233, 117, 136);
     height: 30px;
     border-radius: 19px;
@@ -89,30 +85,39 @@ main p {
     margin-bottom: 20px;
 }
 
+
+/*main part of the form*/
+
 .info input,
-.info select
- {
+.info select {
     margin-bottom: 20px;
     padding-left: 20px;
     width: 80%;
     height: 40px;
- 
 }
+
 form label,
 form input,
-form select{display: inline-block;
+form select {
+    display: inline-block;
 }
 
 form input,
-form select{display: flex;}
-.profile textarea {display: flex;
+form select {
+    display: flex;
+}
+
+.profile textarea {
+    display: flex;
     width: 90%;
 }
-.country select{display: inline-flex;
-width: 90%;
-height: 40px;
-margin-bottom: 20px;}
 
+.country select {
+    display: inline-flex;
+    width: 90%;
+    height: 40px;
+    margin-bottom: 20px;
+}
 
 .ship-address {
     font-size: 1.25rem;
@@ -123,6 +128,9 @@ margin-bottom: 20px;}
     width: 50%;
     height: 20px;
 }
+
+
+/*last part of the submit*/
 
 .submit {
     width: 150px;
@@ -141,12 +149,12 @@ a {
     text-decoration: none;
 }
 
-
 @media screen and (min-width: 900px) {
     body {
         background-color: rgb(247, 200, 235);
-        width: 90%;
+        width: 80%;
     }
+    /*first part of header*/
     .left-nav,
     .right-nav {
         height: 100px;
@@ -160,6 +168,7 @@ a {
         text-align: left;
         font-size: 3rem;
     }
+    /*main part of the form*/
     .name {
         display: flex;
         flex-direction: row;
@@ -169,15 +178,21 @@ a {
     }
     .name input {
         width: 30%;
+        margin-left: 25px;
+        margin-right: 15px;
     }
-  
-    .country{font-size: 1.5rem;
+    .country {
+        font-size: 1.5rem;
         font-weight: 400;
         margin-left: 11%;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
-    .country select{width: 33%;
+    .country select {
+        width: 33%;
         display: inline-flex;
         height: 50px;
+        margin-left: 25px;
     }
     .street-address {
         display: flex;
@@ -189,6 +204,8 @@ a {
     .street-address input {
         width: 30%;
         height: 40px;
+        margin-left: 25px;
+        margin-right: 15px;
     }
     main {
         padding-left: 50px;
@@ -199,12 +216,13 @@ a {
         width: 100%;
     }
     .profile-label {
-        width: 18%;
+        width: 20%;
         font-size: 1.5rem;
     }
     .profile-fill {
-        width: 75%;
+        width: 80%;
         margin-top: 20px;
+        margin-left: 20px;
     }
     .ship-address {
         font-size: 28px;
@@ -213,6 +231,7 @@ a {
         width: 50px;
         height: 40px;
     }
+    /*last part of the submit*/
     .submit {
         margin-left: 70%;
         margin-bottom: 100px;

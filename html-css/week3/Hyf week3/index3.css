@@ -1,23 +1,25 @@
 body {
-    width: 100%;
+    width: 80%;
     margin: 0 auto;
-    
 }
 
+a {
+    text-decoration: none;
+}
+
+
+/*first part of header*/
+
 nav {
-  
     margin-top: 50px;
 }
 
 .logo-nav {
     list-style: none;
-  
     display: flex;
- 
     justify-content: space-between;
     align-items: center;
     text-align: center;
- 
 }
 
 .left-nav {
@@ -34,7 +36,6 @@ nav {
     width: 50%;
     height: 100px;
     background-color: rgb(252, 121, 98);
-    
 }
 
 .logo-nav li:hover,
@@ -42,10 +43,14 @@ logo-nav li:focus {
     background-color: rgb(195, 73, 199);
     cursor: pointer;
 }
-.tittle-pic img{object-fit: cover;
-    max-width: 100%;
 
+.tittle-pic img {
+    object-fit: cover;
+    max-width: 100%;
 }
+
+
+/*second part of the info*/
 
 h1 {
     font-size: 2.25rem;
@@ -78,6 +83,9 @@ p {
     height: 30px;
     border-radius: 19px;
 }
+
+
+/*main part of the form*/
 
 .interest {
     width: 50%;
@@ -127,6 +135,9 @@ p {
     margin-left: 10px;
 }
 
+
+/*last part of the submit*/
+
 .button {
     width: 100%;
 }
@@ -144,51 +155,51 @@ p {
     font-weight: 600;
 }
 
-a {
-    text-decoration: none;
-}
-
 @media screen and (max-width: 900px) {
     body {
         background-color: rgb(247, 200, 235);
-        
+        width: 95%;
     }
+    /*first part of header*/
     .left-nav,
     .right-nav {
         height: 50px;
-     
     }
-h1,h2{padding-left: 10%;}
-h3{padding-left: 2%;}
-
-    
-    .interest{width: 90%;
-        display:flex;
+    /*second part of the info*/
+    h1,
+    h2 {
+        padding-left: 10%;
+    }
+    h3 {
+        padding-left: 2%;
+    }
+    /*main part of the form*/
+    .interest {
+        width: 90%;
+        display: flex;
         flex-direction: row;
-        
-
-     
     }
-    .interest input {display: inline-flex;
+    .interest input {
+        display: inline-flex;
         width: 30px;
         height: 30px;
     }
     .container {
         width: 100%;
         display: flex;
-       
     }
     .container div {
         width: 100%;
         height: 400px;
     }
     .container img {
-        width:90%;
+        width: 90%;
         height: 300px;
         object-fit: cover;
-        text-align:end;
+        text-align: end;
         margin-left: 5%;
     }
+    /*last part of the submit*/
     .submit {
         width: 150px;
         height: 50px;
