@@ -9,5 +9,6 @@ const firstName = firstWords[Math.floor(Math.random() * firstWords.length)];
 const secondName = secondWords[Math.floor(Math.random() * secondWords.length)];
 
 const length = firstName.length + secondName.length;
+console.log(`The startup: "${firstName} ${secondName}" contains ${length} characters.`)
 
-console.log("The startup: " + firstName  + ` ` + secondName + " " + "contains" + " " + length + " " + "characters.")
+//console.log("The startup: " + firstName  + ` ` + secondName + " " + "contains" + " " + length + " " + "characters.")
