@@ -1,6 +1,8 @@
 //fullname function
 function getFullname(fullname1, fullname2) {
-    return fullname1 + " " + fullname2
+
+    return fullname1 + " " + fullname2;
+
 }
 console.log(getFullname("Benjamin", "Hughes"))
 
@@ -10,12 +12,16 @@ function getFullname(fullname1, fullname2, useFormalName = false, gender = "male
     if (useFormalName) {
         if (gender === "male") {
 
-            return "Lord" + fullname1 + " " + fullname2
+            return "Lord" + fullname1 + " " + fullname2;
+            //return "lord"+getFullname(fullname1, fullname2);
+
         } else {
-            return "Miss" + fullname1 + " " + fullname2
+            return "Miss" + fullname1 + " " + fullname2;
+            //return "Lordess" + getFullname(fullname1, fullname2);
         }
     } else {
-        return fullname1 + " " + fullname2
+        return fullname1 + " " + fullname2;
+        // return getFullname(fullname1, fullname2);
     }
 
 }
@@ -25,8 +31,8 @@ function getFullname(fullname1, fullname2, useFormalName = false, gender = "male
 const day = ["sunday", "monday", "tuesday", "wendsday", "thursday", "friday", "saterday"]
 
 function getEventWeekday(today, eventDay) {
-    let eventDay_ = eventDay % 7;
 
+    // get the today´s index.
     let index = -1;
     for (let i = 0; i < day.length; i++) {
         if (today === day[i]) {
@@ -39,11 +45,22 @@ function getEventWeekday(today, eventDay) {
         return undefined;
     }
 
-    return "The event will take place in " + day[(index + eventDay_) % 7];
+    return "The event will take place in " + day[(index + eventDay) % 7];
 }
 
 console.log(getEventWeekday("tuesday", 41));
 
+//method 2;
+/*
+const day = ["sunday", "monday", "tuesday", "wendsday", "thursday", "friday", "saterday"];
+let d= new Date();
+let today = day[d.getday()];
+function getEventWeekday(today, eventDay){
+
+    return "The event will take place in " +day[(today+eventDay)%7];
+}
+console.log(day[d.getday()],38);
+*/
 
 
 
@@ -115,8 +132,8 @@ addStudentToClass("queen");
 addStudentToClass("cfd");
 
 
-//add candy
-
+//add candy------------------
+//method 1--------------
 const obj = {
     "Sweet": 0.5,
     "Chocolate": 0.7,
@@ -124,17 +141,35 @@ const obj = {
     "Chewing-gum": 0.03
 }
 
-let boughtCandPrices = [];
-let amountToSpend = Math.random() * 100;
+const boughtCandPrices = [];
+
+const amountToSpend = Math.random() * 100;
+
 function addCandy(candyType, weight) {
 
-    var price = weight * obj[candyType];
+    const price = weight * obj[candyType];
     console.log(" the price is " + price);
     boughtCandPrices.push(price);
     return price;
 
 }
-
+/*  method 2
+switch(candyType){
+case "Sweet":
+    price = weight*0.5;
+    break;
+case "Chocolate":
+    price = weight*0.7;
+    break;
+case "Toffee":
+    price = weight*1.1;
+    break;
+case "Chewing-gum":
+    price = weight*0.03;
+    break;       
+}
+ boughtCandPrices.push(price);
+ */
 function canBuyMoreCandy() {
     let cost = 0;
     for (let i = 1; i < boughtCandPrices.length; i++) {
