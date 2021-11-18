@@ -31,6 +31,7 @@ function getTravelTime() {
 console.log(travelTime);
 
 //question 3:Series duration of my life---------
+const seriesDurationsPercent = [];
 const seriesDurations = [
     {
         title: "Run, brothers",
@@ -60,18 +61,26 @@ const seriesDurations = [
 
 function logOutSeriesText(seriesDurations) {
     // write code here
-    let string = "";
+    let outputText = "";
     let percent = 0;
+    let sum = 0;
     for (const newSeries of seriesDurations) {
         //count the percent of each series
         percent = (newSeries.days * 24 * 60 + newSeries.hours * 60 + newSeries.minutes) * 100 / (80 * 365 * 24 * 60);
+        //push each percent to an array
+        seriesDurationsPercent.push(percent);
         //out put percent
-        string = string + newSeries.title + " took " + Math.floor(percent * 100) / 100 + " % of my life\n\n";
+        outputText = outputText + newSeries.title + " took " + Math.floor(percent * 100) / 100 + " % of my life\n\n";
+
+
     }
 
-    console.log(string);
+    console.log(outputText);
+    for (let i = 0; i < seriesDurationsPercent.length; i++) {
+        sum += Math.floor(seriesDurationsPercent[i] * 100) / 100;
+    }
+    console.log("All series took " + sum + " % of my life.");
 }
-
 logOutSeriesText(seriesDurations);
 
 // this is the example below--------
@@ -111,7 +120,7 @@ console.log(notes); // [{content: 'Pick up groceries', id: 1}, {content: 'Do lau
 
 
 //Get a note------------
-function getNote(id) {
+function aNote(id) {
     // get the object with name of id
     for (const getId of notes) {
         if (getId.id === id) {
@@ -120,7 +129,7 @@ function getNote(id) {
     } return "Error string";
 }
 
-const firstNote = getNote(2);
+const firstNote = aNote(2);
 console.log(firstNote); // {content: 'Pick up groceries', id: 1}
 
 
@@ -142,7 +151,7 @@ logOutNotesFormatted(notes); // should log out the text below
 
 //Unique feature-------------
 //judge the same id ,if already have that id, we can not add same id.
-function saveNote(content, id) {
+function savedNote(content, id) {
     let idExistence = false;
     //judge the activities is true or false
     for (const checkId of notes) {
@@ -157,7 +166,7 @@ function saveNote(content, id) {
             "content": content,
             "id": id
         })
-        return "this id is added successfully";
+        console.log("this id is added successfully");
     }
     else {
         return "already have this id";
