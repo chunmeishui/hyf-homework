@@ -26,17 +26,11 @@ function getReply(command) {
             result = name;
             inputName = result[result.length - 1];
         }
-        function userName(a) {
-            let result = "Nice to meet you " + inputName;
-            console.log(result);
-        } userName(inputName);
+            console.log("Nice to meet you " + inputNamelt);
     }
     else if (command.includes("what is your name")) {
         newName.push(splitt);
-        function userName(a) {
-            let result = "My name is " + inputName;
-            console.log(result);
-        } userName(inputName);
+            console.log("My name is " + inputName);
     } else if (command.includes("Add fishing to my todo")) {
         //this is the add todo function
         function todolist(command) {
