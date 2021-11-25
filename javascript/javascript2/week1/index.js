@@ -1,9 +1,9 @@
 // 1.Find the shortest word
 const danishWords = ["bil", "plante", "kaffe", "bog", "ø", "planetarium"];
-function shortestWord(a) {
+function shortestWord(word) {
     //suppose the first is the shortest
     let shortest = danishWords[0].length;
-    for (const word of a) {
+    for (const word of danishWords) {
         if (word.length < shortest) {
             //always assign the shortest value to shortest
             shortest = word.length;
@@ -13,13 +13,12 @@ function shortestWord(a) {
 } shortestWord(danishWords); //ø
 
 // 2 .Find and count the Danish letters
-
-const danlishW = ["å", "æ", "ø"];
+const danlishWord = ["å", "æ", "ø"];
 const inputDanlishWord = [];
 function letters(input) {
     let letters = input.split("")
     for (const letter of letters) {
-        if (danlishW.includes(letter)) {
+        if (danlishWord.includes(letter)) {
             inputDanlishWord.push(letter);
         }
     }
@@ -49,50 +48,47 @@ const inputFieldID = document.querySelector('#radioInputID');
 const spiritAnimalNames = ['The crying butterfly', ' The old wolf', ' The diminishing tiger', 'The gigantic giraff', 'The old elephant', "The cute cat", "The gold fish"];
 //select button
 let myButton = document.querySelector('#myButton');
-// judge which input selected and then excute the function
-switch (clickFuction || MouseoverFunction || inputFunction) {
-    case clickFuction():
-        function clickFuction() {
-            myButton.addEventListener('click', function () {
-                //get the input name from customer
-                let username = document.querySelector('#textinput').value;
-                if (username === "") {
-                    alert('name can not be empty click');
-                } else {
-                    //get the random index of the array
-                    let randomSpiritIndex = Math.floor((Math.random() * spiritAnimalNames.length));
-                    const sentence = username + '-' + spiritAnimalNames[randomSpiritIndex];
-                    document.querySelector('.displayClick1').innerHTML = '"' + 'Clicked : ' + '"' + sentence;
-                }
-                console.log('here i am click');
-            });
+let inputSelector = document.querySelector('#textinput');
+myButton.addEventListener('click', function () {
+    //get the input name from customer
+    let username = document.querySelector('#textinput').value;
+    // judge which input selected and then excute the function
+    if (clickID.checked) {
+        if (username === "") {
+            alert('name can not be empty click');
+        } else {
+            //get the random index of the array
+            let randomSpiritIndex = Math.floor((Math.random() * spiritAnimalNames.length));
+            const sentence = username + '-' + spiritAnimalNames[randomSpiritIndex];
+            document.querySelector('.displayClick1').innerHTML = '"' + 'Clicked : ' + '"' + sentence;
         }
-    case MouseoverFunction():
-        function MouseoverFunction() {
-            myButton.addEventListener('mouseover', function () {
-                let username = document.querySelector('#textinput').value;
-                if (username === "") {
-                    alert('name can not be empty click');
-                } else {
-                    let randomSpirit = Math.floor((Math.random() * spiritAnimalNames.length));
-                    const sentence = username + '-' + spiritAnimalNames[randomSpirit];
-                    document.querySelector('.displayMouseover1').innerHTML = '"' + 'Mouseover : ' + '"' + sentence;
-                }
-                console.log('here i am mouseover');
-            });
+        console.log('here i am click');
+    }
+})
+myButton.addEventListener('mouseover', function () {
+    //get the input name from customer
+    let username = document.querySelector('#textinput').value;
+    // judge which input selected and then excute the function
+    if (mouseoverID.checked) {
+        if (username === "") {
+            alert('name can not be empty click');
+        } else {
+            let randomSpirit = Math.floor((Math.random() * spiritAnimalNames.length));
+            const sentence = username + '-' + spiritAnimalNames[randomSpirit];
+            document.querySelector('.displayMouseover1').innerHTML = '"' + 'Mouseover : ' + '"' + sentence;
         }
-    case inputFunction():
-        function inputFunction() {
-            let inputSelector = document.querySelector('#textinput');
-            let username = inputSelector.value;
-            if (username === "") {
-                alert('name can not be empty click');
-            } else {
-                let randomSpirit = Math.floor((Math.random() * spiritAnimalNames.length));
-                let sentence = username + '-' + spiritAnimalNames[randomSpirit];
-                document.querySelector('.displayRadioinput1').innerHTML = ' inputFunction : ' + sentence;
-                console.log('here i am inputFunction');
-            }
-        }
+        console.log('here i am mouseover');
+    }
+})
+function inputFunction() {
+    //get the input name from customer
+    let username = document.querySelector('#textinput').value;
+    // judge which input selected and then excute the function
+    if (inputFieldID.checked) {
+        let randomSpirit = Math.floor((Math.random() * spiritAnimalNames.length));
+        let sentence = username + '-' + spiritAnimalNames[randomSpirit];
+        document.querySelector('.displayRadioinput1').innerHTML = ' inputFunction : ' + sentence;
+        console.log('here i am inputFunction');
+    }
 }
-
+inputFunction();
