@@ -46,13 +46,14 @@ sortWaysOfProducts.addEventListener('change', (event) => {
   }
   else if (sortingProducts === "name") {
     const productSelectedByName = products.sort(function (leftItem, rightItem) {
-      if (leftItem.name > rightItem.name) {
+      //.replace(/[^a-zA-Z ]/g, "") to remove the symbols from the name
+      if (leftItem.name.replace(/[^a-zA-Z ]/g, "") > rightItem.name.replace(/[^a-zA-Z ]/g, "")) {
         return 1;
       }
-      if (leftItem.name < rightItem.name) {
+      if (leftItem.name.replace(/[^a-zA-Z ]/g, "") < rightItem.name.replace(/[^a-zA-Z ]/g, "")) {
         return -1;
       }
-      if (leftItem.name === rightItem.name) {
+      if (leftItem.name.replace(/[^a-zA-Z ]/g, "") === rightItem.name.replace(/[^a-zA-Z ]/g, "")) {
         return 0;
       }
     })

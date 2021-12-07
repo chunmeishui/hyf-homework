@@ -145,10 +145,8 @@ const averageRrating = movies.map((movie) => movie.rating).reduce((total, curren
 console.log("The movies' Average rating is : " + Math.floor(averageRrating * 100) / 100);
 
 //9 Count the total number of Good
-const totalNumberReduce = extraTagInMovies
-    //map all of the tags to a new array
+const totalNumberReduce = moviesStandard // this is the movie added the tag from number question 4
     .map((movie) => movie.tag)
-    // find the doubled tags
     .reduce((allTags, tags) => {
         if (tags in allTags) {
             allTags[tags]++;
@@ -158,4 +156,5 @@ const totalNumberReduce = extraTagInMovies
         return allTags;
     }, {});
 console.log(totalNumberReduce);
+
 
