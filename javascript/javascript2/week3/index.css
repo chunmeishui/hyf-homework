@@ -1,0 +1,67 @@
+h2{
+    font-size: 3rem;
+}
+a,
+p{
+    font-size: 2rem;
+    line-height: 50px;
+}
+div{
+    text-align: center;
+}
+button{
+    width: 200px;
+    height: 50px;
+    background-color: cadetblue;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 20px;
+    padding: 5px;
+    border-radius: 15px;
+    border: 2px solid rgb(52, 61, 32);
+}
+main{width: 80%;
+    margin:0 auto;
+    background-color: cadetblue;
+    color: white;
+}
+.gamePress{
+    display: flex;  
+    text-align: center;
+    flex-direction: column;
+    background-color: rgb(92, 70, 89);
+    width: 50%;
+    margin:20px auto;
+    padding-bottom: 100px;
+}
+#number{
+    width: 250px;
+    height: 50px;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 10px;
+   font-size: 1.5rem;
+   font-weight: 700;
+    background-color: rgb(215, 219, 211);
+}
+#leftScore{
+    width: 50%;
+    height: 200px;
+    background-color: rgb(89, 124, 108);
+    }
+    #rightScore{
+    width: 50%;
+    height: 200px;  
+    background-color: blueviolet; 
+    }    
+    .gameScore{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin-top: 30px;
+    }
+    #gameButton,
+    #newGame{
+        font-size: 1.5rem;
+        padding: 10px;}
