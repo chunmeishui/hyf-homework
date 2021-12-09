@@ -78,7 +78,7 @@ const doubleClick = document.getElementById("doubleClick");
 //               console.log("double clicked");
 //    }, 500);
 //   });
-//method 2
+  //method 2
 doubleClick.addEventListener("click", doubleClickFunction);
 function doubleClickFunction() {
     clickCountArray.push("click");
@@ -179,7 +179,7 @@ function startGame() {
         if (sumS > sumL) {
             winner.textContent = "S win !!!";
         } else if (sumS < sumL) {
-            winner.textContent = "L win !!!!";
+            winner.textContent = "L win !!!";
         }
         else if (sumS === 0 && sumL === 0 && gameTime > 0) {
             winner.textContent = "You did not press any S and L key, time is out!";
@@ -195,8 +195,8 @@ function startGame() {
 // the Play again button.
 newGame.addEventListener("click", newGamer);
 function newGamer() {
-    window.location.reload(true);
-    //method 2
+   window.location.reload(true);
+   //method 2
     // gameButton.removeEventListener('click', startGame)
     // winner.textContent = "";
     // countS.textContent = "";

@@ -15,8 +15,14 @@ p{
     line-height: 50px;
   
 }
+#countS,#countL{
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: serif;
+}
 div{
     text-align: center;
+    transition: all 300ms linear 0s
 }
 button{
     width: 200px;
@@ -30,6 +36,11 @@ button{
     border-radius: 15px;
     border: 2px solid rgb(52, 61, 32);
 }
+button:hover{
+    background-color: rgb(175, 45, 132);
+    transition-duration: 0.6s;
+
+}
 main{width: 80%;
     margin:0 auto;
     background-color: cadetblue;
@@ -41,8 +52,8 @@ main{width: 80%;
     flex-direction: column;
     background-color: rgb(92, 70, 89);
     width: 50%;
-    margin:20px auto;
-    padding-bottom: 100px;
+    margin:0px auto;
+    padding-bottom: 50px;
 }
 #number{
     width: 250px;
@@ -53,24 +64,30 @@ main{width: 80%;
    font-size: 1.5rem;
    font-weight: 700;
     background-color: rgb(215, 219, 211);
+    margin-bottom: 15px;
 }
 #leftScore{
     width: 40%;
-    height: 200px;
+    height: 300px;
     background-color: rgb(89, 124, 108);
-    border-radius: 15px;
-    border-bottom-style: dotted;
-    border-left-style: dotted;
+    border-radius: 25px;
     border-style:groove;
-
+    border: 5px solid white;
+    box-shadow: 10px 8px rgb(80, 128, 102);
 }
-    #rightScore{
+#rightScore{
     width: 40%;
-    height: 200px;  
+    height: 300px;  
     background-color: blueviolet; 
-    border-style:groove;
-    border-radius: 15px;
-    }    
+    border: 5px solid white;
+    border-radius: 25px;
+    box-shadow: 10px 8px rgb(179, 62, 173);
+    }   
+    #rightScore:hover,#leftScore:hover{
+        background-color: #b81b86; /* Green */
+        transition-duration: 0.5s;
+    }
+    
     .gameScore{
         display: flex;
         flex-direction: row;
@@ -82,3 +99,13 @@ main{width: 80%;
     #newGame{
         font-size: 1.5rem;
         padding: 10px;}
+footer{
+    background-color: rgb(88, 113, 124);
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    width: 80%;
+    margin: 0 auto;
+    height: 50px;
+    font-size: 1.5rem;
+}
