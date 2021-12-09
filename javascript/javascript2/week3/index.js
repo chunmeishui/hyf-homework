@@ -72,6 +72,13 @@ runAfterDelay(2, function () {
 //8 
 let clickCountArray = [];
 const doubleClick = document.getElementById("doubleClick");
+//method 1
+// doubleClick.addEventListener('dblclick', function (e) {
+//     setTimeout(() => {
+//               console.log("double clicked");
+//    }, 500);
+//   });
+//method 2
 doubleClick.addEventListener("click", doubleClickFunction);
 function doubleClickFunction() {
     clickCountArray.push("click");
@@ -85,7 +92,8 @@ function doubleClickFunction() {
         doubleClick.removeEventListener("click", doubleClickFunction)
     }, 500);
 };
-//9 
+
+9 // funny joke or bad joke
 
 const logFunnyJoke = () => {
     console.log("this is  a funny joke");
@@ -161,7 +169,6 @@ function startGame() {
             sumL++;
             countL.textContent = sumL
         }
-
     }
     setTimeout(() => {
         document.removeEventListener('keypress', logKey);
@@ -185,14 +192,16 @@ function startGame() {
 
 };
 
-
+// the Play again button.
 newGame.addEventListener("click", newGamer);
 function newGamer() {
-    gameButton.removeEventListener('click', startGame)
-    winner.textContent = "";
-    countS.textContent = "";
-    countL.textContent = "";
-    sumS = 0;
-    sumL = 0;
-    gameButton.addEventListener('click', startGame)
+    window.location.reload(true);
+    //method 2
+    // gameButton.removeEventListener('click', startGame)
+    // winner.textContent = "";
+    // countS.textContent = "";
+    // countL.textContent = "";
+    // sumS = 0;
+    // sumL = 0;
+    // gameButton.addEventListener('click', startGame)
 }
