@@ -1,0 +1,42 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgb(171, 182, 178);
+    align-items: center;
+}
+h1{
+    font-size: 3rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#giphyInput,
+#giphyInputNumber{
+    width: 400px;
+    height: 30px;
+    font-size: 2rem;
+    padding: 15px;
+    text-align: center;
+    border: 5px solid yellowgreen;
+    border-radius: 25px;
+}
+#searchGif{
+    width: 300px;
+    height: 60px;
+    font-size: 2rem;
+    border-radius: 35px;
+   background-color: rgb(187, 64, 187);
+    text-align: center; 
+}
+#imageResult > li > img{
+width:500px;
+height: auto;
+background-color: yellowgreen;
+}
+#imageResult > li{
+    margin-bottom: 30px;
+}
+#imageResult{
+    font-size: 2rem;
+}
