@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather app</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="script.js" defer></script> -->
+    <script src="js.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="app-title">
+            <h1>weather report</h1>
+            <p id="time"></p>
+        </div>
+        <div id="search">
+            <!-- current button -->
+            <button id="currentLocation">current position</button>
+            <form id="myForm">
+                <!-- search part -->
+                <input id="inputCity" type="text" placeholder="Enter the city">
+                <button id="weatherCity">Search</button>
+            </form>
+        </div>
+        <!-- image -->
+        <div class="notification"></div>
+        <img id="weatherPicture" src="img/cloudy.png" alt="cloudy">
+        <div>
+            <!-- information to show weather -->
+            <p class="tempreture-value">6°</p>
+            <p class="tempreture-discription">9°/1°</p>
+            <p class="weatherStatus">Sunny</p>
+            <p class="location">Chengdu</p>
+        </div>
+        <div class="info"></div>
+        <div class="mapLinka"> <a class="mapLink">My location</a> </div>
+    </div>
+</body>
+
+</html>

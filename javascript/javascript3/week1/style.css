@@ -1,0 +1,109 @@
+body{
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    
+}
+div,p{margin: 0;
+    padding: 0;
+}
+
+#search{
+    margin-top: 20px;
+}
+#myForm{
+    display: inline;
+}
+#inputCity,#weatherCity,#currentLocation{
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px;
+    text-align: center;
+    border-radius: 20px;
+    background-color: rgb(59, 61, 61);
+    color: white;
+}
+h1{
+    font-size: 3rem;
+    font-family: cursive;
+    color: rgba(121, 22, 88, 0.8);
+    border-bottom: 10px dotted rgb(69, 34, 102);
+    text-shadow: rgb(190, 100, 190) 5px 2px;
+}
+.container{
+    background-image: url("img/weather2.gif");
+    background-position: center;
+    width:80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#weatherPicture{
+    width:300px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 130px;
+    padding:20px 0;
+    margin: 0;
+   
+}
+#cityMapIcorn{
+    padding-left: 20px;
+    display: inline;
+}
+.tempreture-value{
+    font-size: 5rem;
+}
+.tempreture-discription{
+    font-size: 2rem;
+}
+.weatherStatus,.info{
+    font-size: 1.5rem;
+    font-family:cursive;
+}
+.location,.mapLink{
+    font-size: 1.5rem;   
+    margin-top: 30px;
+    text-decoration: none;
+}
+
+.mapLinka:hover{
+    background-color: rgba(231, 188, 217, 0.8);
+    text-shadow: rgb(190, 100, 190) 1px 2px;
+    font-weight: 400;
+    padding: 5px;
+    border: 5px dotted rgb(48, 125, 170);
+    transition-duration: .5s;
+}
+.mapLinka{
+   text-align: center;
+    background-image: url("/img/map.png");
+    background-size:auto 70px;
+    background-position: right;
+    background-repeat: no-repeat;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    width: 300px;
+    height: 40px;
+    background-color: rgb(184, 213, 236);
+    border-radius: 25px;
+}
+
+.info{
+    margin-top: 100px;
+    margin-bottom: 60px;
+    font-family: cursive;
+    color: rgb(90, 39, 90);
+    font-size: 26px;
+    font-weight: 400;
+    padding: 0 20px;
+}
+#time{
+  color: rgb(221, 216, 247);
+    font-size: 2rem;
+}
+
