@@ -7,11 +7,13 @@ const weatherCity = document.getElementById("weatherCity");
 const myForm = document.getElementById("myForm");
 const weatherPicture = document.getElementById("weatherPicture");
 const time = document.getElementById("time");
+const weatherInfo = document.querySelector(".info")
 let city;
 myForm.addEventListener("submit", searchedCity)
 function searchedCity(event) {
     //remember input
     event.preventDefault();
+    weatherInfo.innerHTML = "";
     // judge the inputvalue
     if (inputCity.value === "") {
         alert("please enter the city first")
@@ -49,7 +51,7 @@ function success(city) {
             tempretureValue.innerText = `${tempreture}°`
             tempretureDiscription.innerText = Math.round(temp_max) + "°" + " /" + parseInt(temp_min) + "°";
             // more infomation 
-            const weatherInfo = document.querySelector(".info")
+
             // Icon for the weather type
             const weatherIcon = weather.weather[0].icon;
             console.log(weatherIcon);
@@ -57,6 +59,10 @@ function success(city) {
             weatherPicture.alert = `weather.weather[0].description`
             // Wind speed
             const weatherSpeed = weather.wind.speed;
+            console.log(weatherSpeed);
+            const speedtitle = document.createElement("h5");
+            speedtitle.innerHTML = `Wind speed:  ${weatherSpeed} m/s`;
+            weatherInfo.appendChild(speedtitle);
             // How clowdy it is
             const weatherState = weather.weather[0].description.toUpperCase();
             const weatherStatus = document.querySelector(".weatherStatus")
@@ -65,11 +71,17 @@ function success(city) {
             const sunrise = weather.sys.sunrise
             let date = new Date(sunrise * 1000);
             let timestr = date.toLocaleTimeString();
+            const sunrisetitle = document.createElement("h5");
+            sunrisetitle.innerHTML = `Sunrise:  ${timestr}`;
+            weatherInfo.appendChild(sunrisetitle);
             //sunset is
             const sunset = weather.sys.sunset
             date = new Date(sunset * 1000);
-            timestr = date.toLocaleTimeString();
-            weatherInfo.innerHTML = "Wind Speed : " + weatherSpeed + " m/s .    " + "sunrise : " + timestr + "     . " + "sunset : " + timestr + " . ";
+            let timestrsunset = date.toLocaleTimeString();
+            const sunsettitle = document.createElement("h5");
+            sunsettitle.innerHTML = `Sunset:  ${timestrsunset}`;
+            weatherInfo.appendChild(sunsettitle);
+
             // Optional a map showing where the city is located
             const lat = weather.coord.lat;
             const long = weather.coord.lon;
@@ -85,9 +97,11 @@ function success(city) {
 //get the current city name
 let latitude;
 let longitude;
-const currentLocation = document.querySelector("#currentLocation")
+const currentLocation = document.querySelector("#currentLocation");
+
 currentLocation.addEventListener("click", current)
 function current() {
+    weatherInfo.innerHTML = "";
     navigator.geolocation.getCurrentPosition(success);
     function success(pos) {
         let crd = pos.coords;
@@ -122,13 +136,17 @@ function current() {
                 tempretureValue.innerText = `${tempreture}°`
                 tempretureDiscription.innerText = Math.round(temp_max) + "°" + " /" + parseInt(temp_min) + "°";
                 // more infomation 
-                const weatherInfo = document.querySelector(".info")
+
                 // Icon for the weather type
                 const weatherIcon = weather.weather[0].icon;
                 weatherPicture.src = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`
                 weatherPicture.alert = `weather.weather[0].description`
                 // Wind speed
                 const weatherSpeed = weather.wind.speed;
+                console.log(weatherSpeed);
+                const speedtitle = document.createElement("h5");
+                speedtitle.innerHTML = `Wind speed:  ${weatherSpeed} m/s`;
+                weatherInfo.appendChild(speedtitle);
                 // How clowdy it is
                 const weatherState = weather.weather[0].description.toUpperCase();
                 const weatherStatus = document.querySelector(".weatherStatus")
@@ -137,11 +155,16 @@ function current() {
                 const sunrise = weather.sys.sunrise
                 let date = new Date(sunrise * 1000);
                 let timestr = date.toLocaleTimeString();
+                const sunrisetitle = document.createElement("h5");
+                sunrisetitle.innerHTML = `Sunrise:  ${timestr}`;
+                weatherInfo.appendChild(sunrisetitle);
                 //sunset is
                 const sunset = weather.sys.sunset
                 date = new Date(sunset * 1000);
-                timestr = date.toLocaleTimeString();
-                weatherInfo.innerHTML = "Wind Speed : " + weatherSpeed + " m/s.      " + "sunrise : " + timestr + " .     " + "sunset : " + timestr + " .";
+                let timestrsunset = date.toLocaleTimeString();
+                const sunsettitle = document.createElement("h5");
+                sunsettitle.innerHTML = `Sunset:  ${timestrsunset}`;
+                weatherInfo.appendChild(sunsettitle);
                 // Optional a map showing where the city is located
                 // const lat = weather.coord.lat;
                 // const long = weather.coord.lon;

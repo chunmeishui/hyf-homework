@@ -5,10 +5,14 @@ body{
     display: flex;
     width: 80%;
     margin: 0 auto;
+    color: rgb(58, 7, 7);
     
 }
 div,p{margin: 0;
     padding: 0;
+}
+h2{
+    color: rgb(58, 7, 7);
 }
 
 #search{
@@ -17,7 +21,9 @@ div,p{margin: 0;
 #myForm{
     display: inline;
 }
-#inputCity,#weatherCity,#currentLocation{
+#inputCity,
+#weatherCity,
+#currentLocation{
     font-size: 20px;
     font-weight: 700;
     padding: 10px;
@@ -48,7 +54,6 @@ h1{
     background-size: cover;
     border-radius: 130px;
     padding:20px 0;
-    margin: 0;
    
 }
 #cityMapIcorn{
@@ -65,12 +70,18 @@ h1{
     font-size: 1.5rem;
     font-family:cursive;
 }
+.mainInfo,.info{
+margin-top: -100px;
+}
+
 .location,.mapLink{
-    font-size: 1.5rem;   
+    font-size: 2.5rem;   
     margin-top: 30px;
     text-decoration: none;
 }
-
+.mapLink{
+    font-size: 24px;
+}
 .mapLinka:hover{
     background-color: rgba(231, 188, 217, 0.8);
     text-shadow: rgb(190, 100, 190) 1px 2px;
@@ -80,17 +91,21 @@ h1{
     transition-duration: .5s;
 }
 .mapLinka{
-   text-align: center;
+   text-align:start;
     background-image: url("img/map.png");
-    background-size:auto 70px;
+    background-size:auto 40px;
     background-position: right;
     background-repeat: no-repeat;
     margin-top: 100px;
     margin-bottom: 20px;
-    width: 300px;
-    height: 40px;
+    width: 200px;
+    height: 30px;
+    padding-left: 53px;
     background-color: rgb(184, 213, 236);
     border-radius: 25px;
+    margin-top: -50px;
+    margin-bottom: 200px;
+   
 }
 
 .info{
