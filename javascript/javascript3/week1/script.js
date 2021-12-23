@@ -6,7 +6,7 @@ const inputCity = document.getElementById("inputCity");
 const weatherCity = document.getElementById("weatherCity");
 const myForm = document.getElementById("myForm");
 const weatherPicture = document.getElementById("weatherPicture");
-const time = document.getElementById("time");
+const time = document.querySelector(".time");
 const weatherInfo = document.querySelector(".info")
 let city;
 myForm.addEventListener("submit", searchedCity)
@@ -37,26 +37,26 @@ function success(city) {
             let minutes = today.getMinutes();
             let hour = today.getHours();
             today = dd + '/' + mm + '/' + yyyy + "   " + hour + ": " + minutes + ": " + seconds;
-            time.innerText = today
+            time.innerText = today;
             //The chosen city
             city = weather.name;
             const weatherlocation = document.querySelector(".location");
             weatherlocation.innerHTML = city;
             // Temperature
             const tempreture = Math.floor(weather.main.temp);
-            const temp_min = weather.main.temp_min
-            const temp_max = weather.main.temp_max
+            const tempMin = weather.main.temp_min;
+            const tempMax = weather.main.temp_max;
             const tempretureValue = document.querySelector(".tempreture-value");
-            const tempretureDiscription = document.querySelector(".tempreture-discription")
-            tempretureValue.innerText = `${tempreture}°`
-            tempretureDiscription.innerText = Math.round(temp_max) + "°" + " /" + parseInt(temp_min) + "°";
+            const tempretureDiscription = document.querySelector(".tempreture-discription");
+            tempretureValue.innerText = `${tempreture}°`;
+            tempretureDiscription.innerText = Math.round(tempMax) + "°" + " /" + parseInt(tempMin) + "°";
             // more infomation 
 
             // Icon for the weather type
             const weatherIcon = weather.weather[0].icon;
             console.log(weatherIcon);
-            weatherPicture.src = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`
-            weatherPicture.alert = `weather.weather[0].description`
+            weatherPicture.src = `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`;
+            weatherPicture.alert = `weather.weather[0].description`;
             // Wind speed
             const weatherSpeed = weather.wind.speed;
             console.log(weatherSpeed);
@@ -65,17 +65,17 @@ function success(city) {
             weatherInfo.appendChild(speedtitle);
             // How clowdy it is
             const weatherState = weather.weather[0].description.toUpperCase();
-            const weatherStatus = document.querySelector(".weatherStatus")
+            const weatherStatus = document.querySelector(".weatherStatus");
             weatherStatus.innerHTML = weatherState;
             // When sunrise 
-            const sunrise = weather.sys.sunrise
+            const sunrise = weather.sys.sunrise;
             let date = new Date(sunrise * 1000);
             let timestr = date.toLocaleTimeString();
             const sunrisetitle = document.createElement("h5");
             sunrisetitle.innerHTML = `Sunrise:  ${timestr}`;
             weatherInfo.appendChild(sunrisetitle);
             //sunset is
-            const sunset = weather.sys.sunset
+            const sunset = weather.sys.sunset;
             date = new Date(sunset * 1000);
             let timestrsunset = date.toLocaleTimeString();
             const sunsettitle = document.createElement("h5");
@@ -98,10 +98,10 @@ function success(city) {
 let latitude;
 let longitude;
 const currentLocation = document.querySelector("#currentLocation");
-
-currentLocation.addEventListener("click", current)
+currentLocation.addEventListener("click", current);
 function current() {
     weatherInfo.innerHTML = "";
+    //getCurrentPositio
     navigator.geolocation.getCurrentPosition(success);
     function success(pos) {
         let crd = pos.coords;
@@ -121,7 +121,7 @@ function current() {
                 let minutes = today.getMinutes();
                 let hour = today.getHours();
                 today = dd + '/' + mm + '/' + yyyy + "   " + hour + ": " + minutes + ": " + seconds;
-                time.innerText = today
+                time.innerText = today;
                 // city name
                 city = weather.name;
                 const weatherlocation = document.querySelector(".location");
@@ -129,18 +129,16 @@ function current() {
                 console.log(city);
                 // Temperature
                 const tempreture = Math.floor(weather.main.temp);
-                const temp_min = weather.main.temp_min
-                const temp_max = weather.main.temp_max
+                const tempMin = weather.main.temp_min;
+                const tempMax = weather.main.temp_max;
                 const tempretureValue = document.querySelector(".tempreture-value");
-                const tempretureDiscription = document.querySelector(".tempreture-discription")
-                tempretureValue.innerText = `${tempreture}°`
-                tempretureDiscription.innerText = Math.round(temp_max) + "°" + " /" + parseInt(temp_min) + "°";
-                // more infomation 
-
+                const tempretureDiscription = document.querySelector(".tempreture-discription");
+                tempretureValue.innerText = `${tempreture}°`;
+                tempretureDiscription.innerText = Math.round(tempMax) + "°" + " /" + parseInt(tempMin) + "°";
                 // Icon for the weather type
                 const weatherIcon = weather.weather[0].icon;
-                weatherPicture.src = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`
-                weatherPicture.alert = `weather.weather[0].description`
+                weatherPicture.src = `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`
+                weatherPicture.alert = `weather.weather[0].description`;
                 // Wind speed
                 const weatherSpeed = weather.wind.speed;
                 console.log(weatherSpeed);
@@ -149,17 +147,17 @@ function current() {
                 weatherInfo.appendChild(speedtitle);
                 // How clowdy it is
                 const weatherState = weather.weather[0].description.toUpperCase();
-                const weatherStatus = document.querySelector(".weatherStatus")
+                const weatherStatus = document.querySelector(".weatherStatus");
                 weatherStatus.innerHTML = weatherState;
                 // When sunrise 
-                const sunrise = weather.sys.sunrise
+                const sunrise = weather.sys.sunrise;
                 let date = new Date(sunrise * 1000);
                 let timestr = date.toLocaleTimeString();
                 const sunrisetitle = document.createElement("h5");
                 sunrisetitle.innerHTML = `Sunrise:  ${timestr}`;
                 weatherInfo.appendChild(sunrisetitle);
                 //sunset is
-                const sunset = weather.sys.sunset
+                const sunset = weather.sys.sunset;
                 date = new Date(sunset * 1000);
                 let timestrsunset = date.toLocaleTimeString();
                 const sunsettitle = document.createElement("h5");

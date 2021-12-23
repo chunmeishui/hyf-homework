@@ -1,5 +1,5 @@
 const apiKey = "KzWbfntmytNcoeo9ygrJJdIstwy3bjtB";
-const giphyInput = document.getElementById("giphyInput");
+// const giphyInput = document.getElementById("giphyInput");
 const giphyInputNumber = document.getElementById("giphyInputNumber");
 const searchGif = document.getElementById("searchGif");
 const imageResult = document.getElementById("imageResult");

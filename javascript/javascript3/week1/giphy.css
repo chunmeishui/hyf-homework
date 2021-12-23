@@ -13,7 +13,7 @@ h1{
 
 #giphyInput,
 #giphyInputNumber{
-    width: 400px;
+    width: 80%;
     height: 30px;
     font-size: 2rem;
     padding: 15px;
@@ -23,8 +23,9 @@ h1{
     margin-bottom: 15px;
 }
 #searchGif{
-    width: 300px;
+    width:100%;
     height: 60px;
+    padding: 15px;
     font-size: 2rem;
     border-radius: 35px;
    background-color: rgb(187, 64, 187);
@@ -37,7 +38,7 @@ height: auto;
 background-color: yellowgreen;
 }
 #imageResult > li{
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 #imageResult{
     font-size: 2rem;
