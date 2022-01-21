@@ -38,32 +38,30 @@ makeUpYourOwnFunctionName2(8);
 
 
 // get current position ???
-//Rewrite time
-function showPosition(position) {
-    const positionXY = "Latitude: " + position.coords.latitude +
-        "<br>Longitude: " + position.coords.longitude;
-    console.log(positionXY);
-}
-function getCurrentLocation() {
-    return new Promise((resolve, reject) => {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
-            resolve();
-        } else {
-            reject("Geolocation is not supported by this browser.");
-        }
-    })
-
-}
-getCurrentLocation()
-    .then((data) => {
-        // called when the users position is found
-        console.log(data);//why undefined????
-    })
-    .catch((error) => {
-        // called if there was an error getting the users location
-        console.log(error);
-    });
+function error(err) {
+    console.warn(`ERROR(${err.code}): ${err.message}`);
+  }
+ async function getcurrentposition(){
+    let options = {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0
+      };
+     try {
+        function success(pos) {
+            let crd = pos.coords;
+          
+            console.log('Your current position is:');
+            console.log(`Latitude : ${crd.latitude}`);
+            console.log(`Longitude: ${crd.longitude}`);
+            console.log(`More or less ${crd.accuracy} meters.`);
+          }
+          navigator.geolocation.getCurrentPosition(success, error); 
+     } catch (error) {
+      console.log(error);   
+     }
+ }
+ getcurrentposition();
 
 //setTimeout in promise way
 function setTimeoutPromise(time) {
