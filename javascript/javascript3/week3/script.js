@@ -51,7 +51,7 @@ const timeInterval = setInterval(() => {
         allCircles.push(c2);
         createCircle(allCircles[i]);
     }
-}, 2000);
+}, 1000);
 
 
 //Follow the mouse - optional
@@ -131,31 +131,43 @@ class Product {
         this.price = price;
     }
     convertToCurrency(currency) {
-        if (currency.toLowerCase().includes("dollar")) {
-            const dollarPrice =
-                this.name + ": " + (this.price * 0.15).toFixed(2) + " " + currency;
-            return dollarPrice;
-        }
-        if (currency.toLowerCase().includes("euro")) {
-            const euroPrice =
-                this.name + ": " + (this.price * 0.13).toFixed(2) + " " + currency;
-            console.log(euroPrice);
-        }
-        if (currency.toLowerCase().includes("cny")) {
-            const cnyPrice =
-                this.name + ": " + (this.price * 0.96).toFixed(2) + " " + currency;
-            console.log(cnyPrice);
-        }
-        if (currency.toLowerCase().includes("nrs")) {
-            const nrsPrice =
-                this.name + ": " + (this.price * 18.08).toFixed(2) + " " + currency;
-            console.log(nrsPrice);
-        }
-        if (currency.toLowerCase().includes("pkr")) {
-            const pkrPrice =
-                this.name + ": " + (this.price * 26.72).toFixed(2) + " " + currency;
-            console.log(pkrPrice);
-        }
+        // use api to get the rate and currency way
+        fetch("http://api.exchangeratesapi.io/v1/latest?access_key=d733fa2b8b4f475f2b6d9cb7772bcbea").then((res) => res.json()).then((data) => {
+            //console.log(data.rates);
+            const rateObj = data.rates;
+            const objArray = Object.entries(rateObj);
+            objArray.map((obj) => {
+                if (currency.toUpperCase().includes(obj[0])) {
+                    console.log(this.name + ": " + this.price * obj[1] + " " + obj[0]);
+                }
+            })
+        })
+        // this is the first time i did in limited way
+        // if (currency.toLowerCase().includes("dollar")) {
+        //     const dollarPrice =
+        //         this.name + ": " + (this.price * 0.15).toFixed(2) + " " + currency;
+        //     return dollarPrice;
+        // }
+        // if (currency.toLowerCase().includes("euro")) {
+        //     const euroPrice =
+        //         this.name + ": " + (this.price * 0.13).toFixed(2) + " " + currency;
+        //     console.log(euroPrice);
+        // }
+        // if (currency.toLowerCase().includes("cny")) {
+        //     const cnyPrice =
+        //         this.name + ": " + (this.price * 0.96).toFixed(2) + " " + currency;
+        //     console.log(cnyPrice);
+        // }
+        // if (currency.toLowerCase().includes("nrs")) {
+        //     const nrsPrice =
+        //         this.name + ": " + (this.price * 18.08).toFixed(2) + " " + currency;
+        //     console.log(nrsPrice);
+        // }
+        // if (currency.toLowerCase().includes("pkr")) {
+        //     const pkrPrice =
+        //         this.name + ": " + (this.price * 26.72).toFixed(2) + " " + currency;
+        //     console.log(pkrPrice);
+        // }
 
     }
 };
@@ -256,14 +268,18 @@ shoppingCart.getTotal();
 shoppingCart.searchProduct("tv");
 shoppingCart.renderProducts();
 shoppingCart.getUser(2);
-const plant = new Product("plant", 50);
-plant.convertToCurrency("dollars"); // 7.5
-const plant1 = new Product("plant", 50);
-plant1.convertToCurrency("Euro"); // 7.4
-const plant2 = new Product("plant", 50);
-plant2.convertToCurrency("cny"); // 0.96
-const plant3 = new Product("plant", 50);
-plant3.convertToCurrency("nrs"); // 18.08
-const plant4 = new Product("plant", 50);
-plant4.convertToCurrency("pkr"); // 26.72
+const plantA = new Product("plant", 50);
+plantA.convertToCurrency("cny"); //default is euro
+
+// this is the first time i did in limited way
+// const plant = new Product("plant", 50);
+// plant.convertToCurrency("dollars"); // 7.5
+// const plant1 = new Product("plant", 50);
+// plant1.convertToCurrency("Euro"); // 7.4
+// const plant2 = new Product("plant", 50);
+// plant2.convertToCurrency("cny"); // 0.96
+// const plant3 = new Product("plant", 50);
+// plant3.convertToCurrency("nrs"); // 18.08
+// const plant4 = new Product("plant", 50);
+// plant4.convertToCurrency("pkr"); // 26.72
 
