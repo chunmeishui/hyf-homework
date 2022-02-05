@@ -1,5 +1,5 @@
 //use class way original data
-let c = document.getElementById("myCanvas");
+const c = document.getElementById("myCanvas");
 c.width = window.innerWidth;
 c.height = window.innerHeight;
 let ctx = c.getContext("2d");
@@ -28,9 +28,9 @@ class Circle {
     }
 }
 const timeInterval = setInterval(() => {
-    let allCircles = [];
-    let amount = 2;
-    let createCircle = function (circle) {
+    const allCircles = [];
+    const amount = 2;
+    const createCircle = function (circle) {
         circle.draw();
     };
     for (let i = 0; i < amount; i++) {
@@ -81,18 +81,19 @@ document.addEventListener('DOMContentLoaded', () => {
 const renderInfo = document.querySelector(".promiseAll");
 const promiseAll = async function promiseAll() {
     try {
-        const apiOne = "https://api.github.com/search/repositories?q=user:chunmeishui";
-        const apitwo = "https://api.github.com/search/repositories?q=user:asmafassy";
-        const apithree = "https://api.github.com/search/repositories?q=user:sumanghimire79";
+        const userChunmei = "https://api.github.com/search/repositories?q=user:chunmeishui";
+        const userAsma = "https://api.github.com/search/repositories?q=user:asmafassy";
+        const userSuman = "https://api.github.com/search/repositories?q=user:sumanghimire79";
         const results = await Promise.all([
-            fetch(apiOne),
-            fetch(apitwo),
-            fetch(apithree)
+            fetch(userChunmei),
+            fetch(userAsma),
+            fetch(userSuman)
         ]);
         const eachApi = results.map(result => result.json());
         const finalData = await Promise.all(eachApi);
         //console.log(finalData);
         finalData.map((data) => data.items.map((singleInfo) => {
+            console.log(singleInfo);
             const nameFull = "Fullname : " + singleInfo.full_name;
             const url = "Url: " + singleInfo.git_url;
             const id = "Owner ID: " + singleInfo.owner.id;
@@ -188,8 +189,8 @@ class ShoppingCart {
     }
     searchProduct(productName) {
         const searchedProducts = [];
-        for (const b of this.products) {
-            if (b.name === productName) {
+        for (const product of this.products) {
+            if (product.name === productName) {
                 searchedProducts.push(productName);
             }
         }
@@ -202,8 +203,8 @@ class ShoppingCart {
     }
     getTotal() {
         let total = 0;
-        for (const a of this.products) {
-            total += a.price;
+        for (const product of this.products) {
+            total += product.price;
 
         }
         console.log("total price : " + total);
