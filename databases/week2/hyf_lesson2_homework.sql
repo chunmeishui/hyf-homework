@@ -79,7 +79,7 @@ WHERE
 GROUP BY
   month(task.created) = 9;
 SELECT
-  count(task.id)
+  count(task.id), month(created)
 FROM
   task
 GROUP BY

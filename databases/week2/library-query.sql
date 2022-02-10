@@ -1,8 +1,5 @@
 use library;
-SELECT
-  *
-FROM
-  author;
+
 -- insert author
 INSERT INTO
   author (name, email)
@@ -33,10 +30,18 @@ INSERT INTO
 VALUES
   ("a-d"),("e-i"),("j-n"),("o-t"),("u-z");
 -- book
+-- change currency to decimal inorder to eg: select > 100
 ALTER TABLE
   book
 MODIFY
-  COLUMN price INT NOT NULL;
+  COLUMN price DECIMAL NOT NULL;
+  -- change price to decimal without currency
+  UPDATE
+  book
+SET
+  price = 259
+WHERE
+  id = 1;
 UPDATE
   book
 SET
