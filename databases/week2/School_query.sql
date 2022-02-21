@@ -3,7 +3,7 @@ SELECT * FROM Class;
 ALTER TABLE
   Class
 ADD
-  status varchar(255);
+  status ENUM;
 ALTER TABLE
   Class
 ADD
