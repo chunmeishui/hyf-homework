@@ -1,9 +1,19 @@
-
-SELECT * FROM Class;
+SELECT
+  *
+FROM
+  Class;
 ALTER TABLE
   Class
 ADD
-  status ENUM;
+  status ENUM("Not started","In progress","Done");
+  -- add index to student name method 1
+ALTER TABLE
+  Student
+ADD
+  FULLTEXT INDEX idx_school_student_name (name);
+    -- add index to student name method 2
+  CREATE INDEX idx_school_student_name
+ON Student (name);
 ALTER TABLE
   Class
 ADD
@@ -11,27 +21,44 @@ ADD
 -- delete column from the table
 ALTER table
   Class DROP COLUMN ClassRemarks;
- INSERT INTO Class (name, begin_date, end_date, status) 
- VALUES ('class22',
+INSERT INTO
+  Class (name, begin_date, end_date, status)
+VALUES
+  (
+    'class22',
     '2022-04-22',
     '2022-08-09',
-    'not-started'),
-    ('class23',
+    'not-started'
+  ),
+  (
+    'class23',
     '2022-06-22',
     '2022-10-06',
-    'not-started'),
-    ('class24',
+    'not-started'
+  ),
+  (
+    'class24',
     '2022-12-22',
     '2023-04-01',
-    'not-started'),
-    ('class25',
+    'not-started'
+  ),
+  (
+    'class25',
     '2023-06-22',
     '2023-12-12',
-    'not-started');
-    UPDATE Class SET begin_date = "2021-12-01" WHERE id = 2;
-SELECT * FROM Student;
-
-    insert into
+    'not-started'
+  );
+UPDATE
+  Class
+SET
+  begin_date = "2021-12-01"
+WHERE
+  id = 2;
+SELECT
+  *
+FROM
+  Student;
+insert into
   Student (name, email, phone, class_id)
 values
   (
@@ -82,4 +109,3 @@ values
     '567890',
     4
   );
-  
