@@ -135,13 +135,17 @@ WHERE
 -- Get meals that still has available reservations ????
 
 SELECT
-meal.title,
-meal.id,
-reservation.meal_id
+   meal.title,
+  meal.max_reservations - sum(reservation.number_of_guests) as Avaliable,
+  reservation.created_date
 FROM
   meal
   JOIN reservation ON reservation.meal_id = meal.id
-WHERE meal.max_reservations > SUM(number_of_guests);
+GROUP BY
+  reservation.meal_id,
+  reservation.created_date
+ORDER BY
+  reservation.created_date ASC;
 
 SELECT
   meal_id,
