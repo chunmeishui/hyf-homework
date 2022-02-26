@@ -9,85 +9,49 @@ const reviews = require("./data/reviews");
 
 const app = express();
 const CheapMeal = meals.filter(meal => meal.price < 70);
-const largeMeal = meals.filter(meal => meal.maxNumberOfGuests > 4);
+const largeMeal = meals.filter(meal => meal.maxNumberOfGuests > 4.5);
+const randomNum = Math.round(Math.random() * meals.length);
+const randomMeal = [meals[randomNum]];
 
 // test local:3000
-
-// app.get("/", async (request, response) => {
-//   response.send("asd");
-// });
 app.get("/", test);
+app.get("/meals", mealsList);
+app.get("/cheap-meals", CheapMealList);
+app.get("/large-meals", largeMealList);
+app.get("/meal", randomMealList);
+
+
 async function test(request, response) {
   response.send(" test is succeed");
 
-}
-
-// meals with review
-app.get("/meals", mealsList);
+};
 
 async function mealsList(request, response) {
-  mapFilter(meals, reviews)
+  response.json(mapFilter(meals));
 };
-function mapFilter(a, b) {
+
+async function CheapMealList(request, response) {
+  response.json(mapFilter(CheapMeal));
+};
+
+async function largeMealList(request, response) {
+  response.json(mapFilter(largeMeal));
+};
+
+async function randomMealList(request, response) {
+  response.json(mapFilter(randomMeal));
+};
+
+function mapFilter(a) {
   const mealWithReview = a.map(meal => {
-    const mealWithReview = b.filter(review => review.mealId === meal.id)
+    const reviewArray = reviews.filter(review => review.mealId === meal.id)
     return {
       ...meal,
-      reviews: mealWithReview
+      reviews: reviewArray
     }
   })
-  response.json(mealWithReview);
-}
-//method 2
-
-// app.get("/meals", async (request, response) => {
-//   const mealWithReview = meals.map(meal => {
-//     const reviewMatchMeal = reviews.filter(review => review.mealId === meal.id)
-//     return {
-//       ...meal,
-//       reviews: reviewMatchMeal
-//     }
-//   })
-//   response.json(mealWithReview);
-// });
-
-// cheap-meals
-
-app.get("/cheap-meals", async (request, response) => {
-
-  const CheapMealWithReview = CheapMeal.map((meal) => {
-    const reviewMatchMeal = reviews.filter(review => review.mealId === meal.id)
-    return {
-      ...meal,
-      reviews: reviewMatchMeal
-    }
-  })
-  response.json(CheapMealWithReview)
-});
-
-// large-meals
-
-app.get("/large-meals", async (request, response) => {
-  const largeMealWithReview = largeMeal.map((meal) => {
-    const reviewMatchMeal = reviews.filter(review => review.mealId === meal.id)
-    return {
-      ...meal,
-      reviews: reviewMatchMeal
-    }
-  })
-  response.json(largeMealWithReview)
-});
-
-app.get("/meal", async (request, response) => {
-  const randomNum = Math.round(Math.random() * meals.length);
-  const randomMeal = meals[randomNum];
-  const reviewRandom = reviews.filter((review) => review.mealId === randomMeal.id)
-  const randommealWithReview = {
-    ...randomMeal,
-    review: reviewRandom
-  }
-  response.json(randommealWithReview);
-})
+  return mealWithReview
+};
 
 // reservationsapp
 
@@ -105,3 +69,62 @@ app.get("/reservation", async (request, response) => {
 
 
 module.exports = app;
+
+
+// original way of doing it
+
+// app.get("/", async (request, response) => {
+//   response.send("asd");
+// });
+
+
+// meals with review
+// app.get("/meals", async (request, response) => {
+//   const mealWithReview = meals.map(meal => {
+//     const reviewMatchMeal = reviews.filter(review => review.mealId === meal.id)
+//     return {
+//       ...meal,
+//       reviews: reviewMatchMeal
+//     }
+//   })
+//   response.json(mealWithReview);
+// });
+
+// cheap-meals
+
+// app.get("/cheap-meals", async (request, response) => {
+//   const CheapMealWithReview = CheapMeal.map((meal) => {
+//     const reviewMatchMeal = reviews.filter(review => review.mealId === meal.id)
+//     return {
+//       ...meal,
+//       reviews: reviewMatchMeal
+//     }
+//   })
+//   response.json(CheapMealWithReview)
+// });
+
+// large-meals
+
+// app.get("/large-meals", async (request, response) => {
+//   const largeMealWithReview = largeMeal.map((meal) => {
+//     const reviewMatchMeal = reviews.filter(review => review.mealId === meal.id)
+//     return {
+//       ...meal,
+//       reviews: reviewMatchMeal
+//     }
+//   })
+//   response.json(largeMealWithReview)
+// });
+
+//random meal with review
+
+// app.get("/meal", async (request, response) => {
+//   const reviewRandom = reviews.filter((review) => review.mealId === randomMeal.id)
+//   const randommealWithReview = {
+//     ...randomMeal,
+//     review: reviewRandom
+//   }
+  // response.send(randommealWithReview);
+// })
+
+
