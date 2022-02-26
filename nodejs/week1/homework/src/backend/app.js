@@ -23,7 +23,6 @@ app.get("/meal", randomMealList);
 
 async function test(request, response) {
   response.send(" test is succeed");
-
 };
 
 async function mealsList(request, response) {
