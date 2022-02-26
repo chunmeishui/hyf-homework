@@ -1,16 +1,20 @@
 console.log("inside warmup file succeed");
+const PI = 3.141596;
 class Circle{
    constructor(radius){
        this.radius = radius
    };
 getDiameter(){
-  return this.radius*2
+
+  return this.radius * 2
 };
 getCircumference(){
-    return this.radius*2*3.14159
+
+    return this.radius * 2 * PI
 };
 getArea(){
-    return this.radius*this.radius*3.14159
+
+    return this.radius * this.radius * PI
 } ;
 }
 
