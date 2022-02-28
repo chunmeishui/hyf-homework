@@ -10,8 +10,7 @@ const reviews = require("./data/reviews");
 const app = express();
 const CheapMeal = meals.filter(meal => meal.price < 70);
 const largeMeal = meals.filter(meal => meal.maxNumberOfGuests > 4.5);
-const randomNum = Math.round(Math.random() * meals.length);
-const randomMeal = [meals[randomNum]];
+const randomMeal = [meals[randomProject(meals)]];
 
 // test local:3000
 app.get("/", test);
@@ -61,11 +60,13 @@ app.get("/reservations", async (request, response) => {
 // random reservation
 
 app.get("/reservation", async (request, response) => {
-  const random = Math.round(Math.random() * reservations.length);
-  const reservationRandom = reservations[random]
+  const reservationRandom = reservations[randomProject(reservations)]
   response.json(reservationRandom);
 });
 
+function randomProject(a){
+  Math.round(Math.random() * a.length)
+}
 
 module.exports = app;
 
