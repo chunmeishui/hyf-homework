@@ -4,19 +4,19 @@
       "numberOfStars": 3,
       "content": "Best meal ever",
       "mealId": 1,
-      "createdAt": 12345
+      "createdAt": "2022-01-02"
     }, {
       "id": 2,
-      "numberOfStars": 3,
+      "numberOfStars": 5,
       "content": "Best meal ever",
       "mealId": 2,
-      "createdAt": 123455
+      "createdAt": "2022-01-04"
     }, {
       "id": 3,
-      "numberOfStars": 3,
+      "numberOfStars": 4,
       "content": "Best meal ever",
       "mealId": 1,
-      "createdAt": 123455
+      "createdAt":"2022-01-03"
     }
   ]
   

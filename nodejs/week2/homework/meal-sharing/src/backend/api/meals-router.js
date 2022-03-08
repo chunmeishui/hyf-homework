@@ -4,17 +4,18 @@ const router = express.Router();
 const meals = require("./../data/meals.json");
 
 router.get("/", async (req, res) => {
-  let data = meals;
+
+  let dataOfMeal = meals;
 
   if ("date" in req.query ) {
     try {
-      data = data.filter((meal) =>
+      dataOfMeal = dataOfMeal.filter((meal) =>
     new Date(meal.createdAt).getTime() > new Date(req.query.date).getTime());
-    if (data.length > 0) {
-      res.json(data)
+    if (dataOfMeal.length > 0) {
+      res.json(dataOfMeal)
     }else{
       res.status(404);
-      res.json("there is no such meal date,Pls check");
+      res.send("there is no such meal date,Pls check");
       
     }
     } catch (error) {
@@ -23,37 +24,47 @@ router.get("/", async (req, res) => {
   }
 
   if ("maxPrice" in req.query) {
-    data = meals.filter(meal => Number(meal.price) <= Number(req.query.maxPrice));
-    if (data.length > 0) {
-            res.json(data);
+
+    dataOfMeal = meals.filter(meal => Number(meal.price) <= Number(req.query.maxPrice));
+    
+    if (dataOfMeal.length > 0) {
+
+            res.json(dataOfMeal);
+
           } else {
+
             res.status(404);
-            res.json("there is no such meal id,Pls check");
+            res.send("there is no such meal id,Pls check");
             
           }
   }
 
   if ("title" in req.query) {
-    data = meals.filter(meal => (meal.title).toLowerCase().includes((req.query.title).toLowerCase()));
-    if (data.length > 0) {
-            res.json(data);
+
+    dataOfMeal = meals.filter(meal => (meal.title).toLowerCase().includes((req.query.title).toLowerCase()));
+
+    if (dataOfMeal.length > 0) {
+            res.json(dataOfMeal);
           } else {
-            res.status(404).json("Sorry,No such meals in the menu");
+            res.status(404).send("Sorry,No such meals in the menu");
           }
   }
   
   if ("limit" in req.query) {
+
     const mealsNew = meals.map(meal => meal);
     const limitNo = Number(req.query.limit);
-    data = mealsNew.slice(0, limitNo);
+    dataOfMeal = mealsNew.slice(0, limitNo);
+
     if (limitNo <= mealsNew.length && limitNo > 0) {
-            res.json(data);
+            res.json(dataOfMeal);
           } else {
-            res.status(404).json(`Sorry,there is only ${mealsNew.length} meals left.`);
+            res.status(404).send(`Sorry,there is only ${mealsNew.length} meals left.`);
           }
   }
- 
-   res.json(data);
+ else{
+   res.json(dataOfMeal);// no one is match just show the whole data
+  }
 
 });
 
