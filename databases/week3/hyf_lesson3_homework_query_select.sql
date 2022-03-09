@@ -135,17 +135,17 @@ WHERE
 -- Get meals that still has available reservations ????
 
 SELECT
-   meal.title,
-  meal.max_reservations - sum(reservation.number_of_guests) as Avaliable,
-  reservation.created_date
+meal.title AS Meal,
+meal.max_reservations AS Capacity,
+SUM(reservation.number_of_guests) AS 'Total Order',
+meal.max_reservations - sum(reservation.number_of_guests) as Avaliable
 FROM
-  meal
-  JOIN reservation ON reservation.meal_id = meal.id
+meal
+JOIN reservation ON reservation.meal_id = meal.id
 GROUP BY
-  reservation.meal_id,
-  reservation.created_date
-ORDER BY
-  reservation.created_date ASC;
+reservation.meal_id
+HAVING
+meal.max_reservations - sum(reservation.number_of_guests) > 0;
 
 SELECT
   meal_id,
