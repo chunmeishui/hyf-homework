@@ -1,0 +1,33 @@
+[
+    {
+        "id" : 1,
+        "title" : "Indian food in the summer",
+        "maxNumberOfGuests" : 5,
+        "description" : "A nice night out eating delicious indian food",
+        "createdAt" : "2019-07-01",
+        "price" : 67
+    },
+    {
+        "id" : 2,
+        "title" : "chinese food in the summer",
+        "maxNumberOfGuests" : 5,
+        "description" : "A nice night out eating delicious chinese food",
+        "createdAt" : "2019-08-01",
+        "price" : 100
+    }, {
+        "id" : 3,
+        "title" : "Indian food in the winter",
+        "maxNumberOfGuests" : 5,
+        "description" : "A nice night out eating delicious indian food",
+        "createdAt" : "2019-09-02",
+        "price" : 80
+    },
+    {
+        "id" : 4,
+        "title" : "chinese food  classic",
+        "maxNumberOfGuests" : 5,
+        "description" : "A nice night out eating delicious chinese food",
+        "createdAt" : "2019-09-02",
+        "price" : 168
+    }
+]
