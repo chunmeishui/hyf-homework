@@ -1,11 +1,11 @@
-import './App.css';
-import { MainToDo } from './MainToDo';
-import { TodoData } from './TodoData';
+import "./App.css";
+import { MainToDo } from "./MainToDo";
+import { TodoData } from "./TodoData";
 function App() {
   return (
-    <div className='App'>
-<MainToDo TodoData = {TodoData}/>
-   </div>
+    <div className="App">
+      <MainToDo TodoData={TodoData} />
+    </div>
   );
 }
 

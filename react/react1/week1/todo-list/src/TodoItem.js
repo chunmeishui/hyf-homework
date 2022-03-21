@@ -1,6 +1,6 @@
 import React from "react"
 
-export function TodoItems(props){
+export function TodoItem(props){
     return(
       <li>
           <h4>
