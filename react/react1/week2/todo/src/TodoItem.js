@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-
+//{ description, deleteItem, id } is from the parent todolist component
 export function TodoItem({ description, deleteItem, id }) {
+  // change the className
   const [className, setClassName] = useState("unchecked");
   function changeStyle() {
     setClassName((prev) => {
@@ -11,6 +12,7 @@ export function TodoItem({ description, deleteItem, id }) {
       }
     });
   }
+  // call the delete function from parent todolist component
   function deletetodo() {
     deleteItem(id);
   }

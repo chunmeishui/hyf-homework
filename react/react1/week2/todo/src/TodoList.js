@@ -24,9 +24,10 @@ const addTodos = [
   { description: "do sports" },
   { description: "back home" },
 ];
-
+// main function
 function TodoList() {
   const [usetodo, setUsetodo] = useState(todos);
+  // add todo function
   const addTodo = () => {
     const randomIndex = Math.floor(Math.random() * usetodo.length);
     const addId = usetodo.length + 1;
@@ -34,17 +35,19 @@ function TodoList() {
     const addedTodo = setUsetodo((prev) => [...prev, randomTodo]);
     return addedTodo;
   };
-
+  //delete funtion
   const deleteItem = (id) => {
     setUsetodo((prev) => prev.filter((todo) => todo.id !== id));
   };
-
+  // from list parent to child item component
   const TodoItema = usetodo.map((todo) => {
     return (
       <TodoItem
         description={todo.description}
         key={todo.id}
+        //transfer id to todoitem
         id={todo.id}
+        // transfer deleteitem function to todoitem
         deleteItem={deleteItem}
       ></TodoItem>
     );
@@ -61,6 +64,7 @@ function TodoList() {
     return (
       <div>
         <button onClick={addTodo}>Add to do </button>
+
         {TodoItema}
       </div>
     );
