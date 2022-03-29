@@ -5,6 +5,7 @@ export function TodoItem({ description, deleteItem, id }) {
   const [className, setClassName] = useState("unchecked");
   function changeStyle() {
     setClassName((prev) => {
+      // prev = "unchecked"?"unchecked":"checked";
       if (prev === "unchecked") {
         return "checked";
       } else {

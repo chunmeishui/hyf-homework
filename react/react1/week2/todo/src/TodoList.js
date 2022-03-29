@@ -52,22 +52,33 @@ function TodoList() {
       ></TodoItem>
     );
   });
-
-  if (usetodo.length === 0) {
-    return (
-      <div>
-        <button onClick={addTodo}>Add to do </button>
-        <span> no item left</span>
-      </div>
-    );
-  } else {
-    return (
-      <div>
-        <button onClick={addTodo}>Add to do </button>
-
-        {TodoItema}
-      </div>
-    );
-  }
+//method 1
+ return (usetodo.length === 0) ?(
+    <div>
+      <button onClick={addTodo}>Add to do </button>
+      <span> no item left</span>
+    </div>
+  ): (
+    <div>
+      <button onClick={addTodo}>Add to do </button>
+      {TodoItema}
+    </div>
+  );
+  // method 2 to judge the display
+  // if (usetodo.length === 0) {
+  //   return (
+  //     <div>
+  //       <button onClick={addTodo}>Add to do </button>
+  //       <span> no item left</span>
+  //     </div>
+  //   );
+  // } else {
+  //   return (
+  //     <div>
+  //       <button onClick={addTodo}>Add to do </button>
+  //       {TodoItema}
+  //     </div>
+  //   );
+  // }
 }
 export default TodoList;
