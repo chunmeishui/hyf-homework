@@ -1,0 +1,22 @@
+[
+    {
+      "id": 1,
+      "numberOfStars": 3,
+      "content": "Best meal ever",
+      "mealId": 1,
+      "createdAt": "2022-01-02"
+    }, {
+      "id": 2,
+      "numberOfStars": 5,
+      "content": "Best meal ever",
+      "mealId": 2,
+      "createdAt": "2022-01-04"
+    }, {
+      "id": 3,
+      "numberOfStars": 4,
+      "content": "Best meal ever",
+      "mealId": 1,
+      "createdAt":"2022-01-03"
+    }
+  ]
+  
