@@ -13,9 +13,7 @@ export function TodoItem({ description, deleteItem, id }) {
     });
   }
   // call the delete function from parent todolist component
-  function deletetodo() {
-    deleteItem(id);
-  }
+  const deletetodo = () => deleteItem(id);
   return (
     <div>
       <label htmlFor="item" className={className}>
