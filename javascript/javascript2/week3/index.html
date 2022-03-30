@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <main>
+    <div>
+      <button id="myButton">Click</button>
+    </div>
+    <div>
+      <button id="get-locationa">
+        Q5: Get My Location
+      </button>
+      <p>
+        Your location is <span id="latitude">0.00</span>°
+        latitude by <span id="longitude">0.00</span>° longitude.
+      </p>
+    </div>
+    <div>
+      <p>
+        <a id="locationlink" target="_blank" style="color:#0000FF;text-align:left"></a>
+      </p>
+      <button id="get-location"> Q6:Get My Location in map </button>
+    </div>
+    <div>
+      <button id="doubleClick">doubleClick</button>
+    </div>
+    <div class="gamePress">
+      <h1>Fastest presser</h1>
+      <p> This is the press key word game.you have to choose press "L" or press "S".The faster presser will win.</p>
+      <div>
+        <input type="number" id="number" placeholder="Enter the game time">
+      </div>
+      <div>
+        <button id="gameButton">Start Game</button>
+        <button id="newGame">Play again</button>
+      </div>
+      <div>
+        <h2 id="win"></h2>
+      </div>
+      <div class="gameScore">
+        <div id="leftScore">
+          <h2> Press S</h2>
+          <p id="countS"></p>
+        </div>
+        <div id="rightScore">
+          <h2> Press L</h2>
+          <p id="countL"></p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>@chunmei 2021.12.09</footer>
+  <script src="index.js" id="script"></script>
+</body>
+
+</html>

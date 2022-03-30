@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index1.css">
+</head>
+
+<body>
+    <!--first part of the header -->
+    <header>
+        <nav>
+            <ul class="logo-nav">
+                <li class="left-nav">logo</li>
+                <li class="right-nav">Navigation</li>
+            </ul>
+        </nav>
+        <div class="tittle-pic">
+            <img src="images/10.PNG" alt="wowen dressed with fashion">
+        </div>
+        <!--second part of the info -->
+
+        <Div class="wrapper">
+            <h1>Sign up to your customtailor.com</h1>
+            <p>We can't wait to help you improve your life-style and gain the attention from people around you!</p>
+            <p>Sign up below to save up to 70% on apparel, hand-bags and cosmetics. Our agents are busy picking the best offers that match your preferences and style. Every week we will send you a hand-picked selection - we just need to know a few details
+                about your first...</p>
+        </Div>
+    </header>
+    <!--main part of the form -->
+    <main>
+        <form action="index2.html" method="post">
+            <h2>Step 1/4 - tell us who you are?</h2>
+            <h3>Progress</h3>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <p>Nice to meet you. Let's spend a minute to get to know each other? Please enter the following:</p>
+            <div class="info name">
+                <label for="first-name">First name*</label>
+                <input type="text" id="first-name" required><br>
+                <label for="last-name">Last name*</label>
+                <input type="text" id="last-name" required><br>
+            </div>
+            <div class="country">
+                <label for="country">Country*</label>
+                <select name="country" id="country">
+    <option value=""> </option>
+    <option value="China">China</option>
+    <option value="Danmark">Danmark</option>
+    <option value="USA">USA</option>
+    <option value="UK">UK</option>
+    <option value="German">German</option>
+</select><br>
+            </div>
+            <div class="info street-address">
+                <label for="address">Street address*</label>
+                <input type="text" id="address" required><br>
+                <label for="post code">Post code*</label>
+                <input type="num" id="post code" required>
+            </div>
+            <div class="profile">
+                <div class="profile-label">
+                    <label for="profile"><h3>Profile description</h3>
+                         <p>Please provide a short descripyion of yourself to be displayed on our social community pages.</p>
+</label><br></div>
+                <div class="profile-fill">
+                    <textarea name="profile" id="Profile" cols="30" rows="15" maxlength="500"> </textarea></div>
+            </div>
+            <p>Use the same address for billing and shipping? Uncheck below to fill out a separate shipping address.</p>
+            <div class="ship-address">
+                <label for="shipping-ad">Shipping address</label>
+                <input type="checkbox" id="shipping-ad" checked>
+            </div>
+            <!--last part of the submit -->
+
+            <button class="submit" type="submit">
+                    <a href="index2.html">  Next step</a> </button>
+
+    </main>
+    </form>
+
+</body>
+
+</html>
