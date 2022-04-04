@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  margin-bottom: 50px;
 }
 .checked{
   text-decoration: line-through;
@@ -22,6 +23,16 @@ font-size: 700;}
   font-size: 600;
   width: 60%;
   background-color: rgb(223, 229, 230);
+  display: flex;
+  flex-direction: column;
+text-align: center;
+justify-content: left;
+}
+.display{
+  background-color: #bfc7c0;
+  width: 70%;
+  padding: 5px;
+  margin: 0 auto;
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
