@@ -16,7 +16,8 @@ const todos = [
     description: "Eat breakfast",
   },
 ];
-const addTodos = [
+
+const onAddTodos = [
   { description: "dress well" },
   { description: "go to school" },
   { description: "study hard" },
@@ -28,10 +29,10 @@ const addTodos = [
 function TodoList() {
   const [usetodo, setUsetodo] = useState(todos);
   // add todo function
-  const addTodo = () => {
+  const onAddTodo = () => {
     const randomIndex = Math.floor(Math.random() * usetodo.length);
     const addId = usetodo.length + 1;
-    const randomTodo = { id: addId, ...addTodos[randomIndex] };
+    const randomTodo = { id: addId, ...onAddTodos[randomIndex] };
     const addedTodo = setUsetodo((prev) => [...prev, randomTodo]);
     return addedTodo;
   };
@@ -52,15 +53,15 @@ function TodoList() {
       ></TodoItem>
     );
   });
-//method 1
- return (usetodo.length === 0) ?(
+  //method 1
+  return usetodo.length === 0 ? (
     <div>
-      <button onClick={addTodo}>Add to do </button>
+      <button onClick={onAddTodo}>Add to do </button>
       <span> no item left</span>
     </div>
-  ): (
+  ) : (
     <div>
-      <button onClick={addTodo}>Add to do </button>
+      <button onClick={onAddTodo}>Add to do </button>
       {TodoItema}
     </div>
   );

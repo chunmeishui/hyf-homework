@@ -1,13 +1,12 @@
-import {useState,useEffect} from "react";
-export function TimeOnPage(){
-const [Time,setTime] = useState(0);
-useEffect(()=> {
-    setTimeout(()=> {
-        setTime(prev => prev +1) 
-    } ,1000)
-   
-},[Time])
+import { useState, useEffect } from "react";
 
-return <p>You have used {Time} Seconds on this website</p>
+export function TimeOnPage() {
+  const [countTime, setCountTime] = useState(0);
+  useEffect(() => {
+    setTimeout(() => {
+      setCountTime((previous) => previous + 1);
+    }, 1000);
+  }, [countTime]);
 
-};
+  return <p>You have used {countTime} Seconds on this website</p>;
+}
