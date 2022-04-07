@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { RegistrationItem } from "./RegistrationItem";
 import { FancyBorder } from "../todoweek3/FancyBorder";
 import "./Registration.css";
 
 //main function
 export const RegistrationList = () => {
-  const [name, setDName] = useState("");
+  const [name, setName] = useState("");
   const [startDate, setStartDate] = useState("");
   const [startTime, setStartTime] = useState("");
   const [endDate, setEndDate] = useState("");
@@ -13,24 +13,39 @@ export const RegistrationList = () => {
   const [update, setUpdate] = useState([]);
   const [searchValue, setSearchValue] = useState([]);
 
- 
   // add info
   const saveInfo = () => {
-    const id = update.length + 1;
+    // const id = update.length + 1;
     setUpdate((prev) => [
       ...prev,
-      { id, name, startDate, endDate, startTime, endTime },
+      { name, startDate, endDate, startTime, endTime },
     ]);
   };
   // how to calculate the time from the api ?????? with date and time together
-//  useEffect(() => {
-//    fetch(
-//      "https://gist.githubusercontent.com/benna100/5fd674171ea528d7cd1d504e9bb0ca6f/raw"
-//    )
-//      .then((response) => response.json())
-//      .then((data) => setUpdate(data));
-//  }, []);
+  useEffect(() => {
+    fetch(
+      "https://gist.githubusercontent.com/benna100/5fd674171ea528d7cd1d504e9bb0ca6f/raw"
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        data.map((data, index) => {
+          setUpdate((prev) => [
+            ...prev,
+            {
+              // id: id,
+              name: data.name,
+              startDate: data.start.split("T")[0],
+              startTime: data.start.split("T")[1],
+              endDate: data.end.split("T")[0],
+              endTime: data.end.split("T")[1],
+            },
+          ]);
+        }, []);
 
+        // const apiEndtDate = data.map((data) => data.end.split("T")[1]);
+        // const apiName = data.map((data) => data.name);
+      });
+  }, []);
   // search part
   function searchByName() {
     const result = update.filter((data) =>
@@ -49,7 +64,7 @@ export const RegistrationList = () => {
           startTime={item.startTime}
           endDate={item.endDate}
           endTime={item.endTime}
-          id={item.id}
+          // id={item.id}
           key={index}
         />
       </>
@@ -67,7 +82,7 @@ export const RegistrationList = () => {
             id="name"
             type="text"
             value={name}
-            onChange={(e) => setDName(e.target.value)}
+            onChange={(e) => setName(e.target.value)}
           ></input>
         </div>
         <div>
