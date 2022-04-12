@@ -1,4 +1,5 @@
 import "./Registration.css";
+
 export const RegistrationItem = ({
   name,
   startDate,
@@ -19,13 +20,13 @@ export const RegistrationItem = ({
   const totalPrice = hours * 150 + (minutes / 60) * 150;
   return (
     <div className="display">
-      <li className="left name"> Name : {name}.</li>
+      <li className="left name"> {name}.</li>
       <li className="left">
         Start : {startDate} {startTime}.
       </li>
       <li className="endTime left">
         {" "}
-        End :   {endDate} {endTime}.
+        End : {endDate} {endTime}.
       </li>
       <li className="right"> Working Time : {total}.</li>
       <li className="right"> Salary : {totalPrice} Kr.</li>

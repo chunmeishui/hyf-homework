@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+
 // Item component
 const ItemTodo = ({ description, deadline, onDeleteTodo, id }) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -10,7 +11,7 @@ const ItemTodo = ({ description, deadline, onDeleteTodo, id }) => {
 
   function changeClassName() {
     setClassName((prev) => {
-      //  return  prev = "unchecked"?"checked":"unchecked";
+      //  return {prev =="unchecked" ? "checked" : "unchecked";}
       if (prev === "unchecked") {
         return "checked";
       } else {

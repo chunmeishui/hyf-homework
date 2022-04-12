@@ -29,7 +29,7 @@ export const RegistrationList = () => {
       .then((response) => response.json())
       .then((data) => {
         data.map((data, index) => {
-          setUpdate((prev) => [
+          return setUpdate((prev) => [
             ...prev,
             {
               // id: id,
@@ -41,9 +41,6 @@ export const RegistrationList = () => {
             },
           ]);
         }, []);
-
-        // const apiEndtDate = data.map((data) => data.end.split("T")[1]);
-        // const apiName = data.map((data) => data.name);
       });
   }, []);
   // search part
@@ -52,6 +49,7 @@ export const RegistrationList = () => {
       data.name.toLowerCase().includes(searchValue.toLowerCase())
     );
     setUpdate(result);
+    setSearchValue("");
   }
 
   // child registrationItem part
