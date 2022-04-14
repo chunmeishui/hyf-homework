@@ -1,15 +1,15 @@
 import { useContext } from "react";
 import { ApiTotalData } from "./SearchUsersList";
+import "../App.css";
 
 export const SearchUsersItem = () => {
-
   const userlist = useContext(ApiTotalData);
-  const itemApi = userlist.apiTotalData.map((name) => {
+  const itemApi = userlist.map((name) => {
     return <h5>{name}</h5>;
   });
   return (
     <>
-    <div>{itemApi}</div>
+      <div className="item">{itemApi}</div>
     </>
   );
 };

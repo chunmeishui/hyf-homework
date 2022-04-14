@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { SearchUsersList } from "./SearchUsersList";
+import "../App.css";
 
 export const usersContext = React.createContext();
 
@@ -10,8 +11,9 @@ export const SearchMain = () => {
       <h1>Github users searcher</h1>
     
         
-          <input
+          <input className="input"
             type="text"
+            placeholder="Enter name"
             value={apiLoginData}
             onChange={(e) => setApiLoginData(e.target.value)}
           ></input>

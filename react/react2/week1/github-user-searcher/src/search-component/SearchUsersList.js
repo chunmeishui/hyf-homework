@@ -16,7 +16,7 @@ export const SearchUsersList = () => {
   useEffect(() => {
     if (!query) {
       setApiTotalData([]);
-      // return;
+      return;
     }
     setLoading(true);
     (async () => {
@@ -25,8 +25,10 @@ export const SearchUsersList = () => {
         const result = response.items.map((data) => data.login);
         setApiTotalData(result);
       } catch (err) {
+        throw err;
       } finally {
         setLoading(false);
+        
       }
     })();
   }, [query, api]);
@@ -37,7 +39,7 @@ export const SearchUsersList = () => {
       {apiTotalData.length === 0 ? (
         <p>No items</p>
       ) : (
-        <ApiTotalData.Provider value={{ apiTotalData }}>
+        <ApiTotalData.Provider value={apiTotalData}>
           <SearchUsersItem />
         </ApiTotalData.Provider>
       )}

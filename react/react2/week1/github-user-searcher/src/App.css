@@ -1,7 +1,23 @@
 .App {
   text-align: center;
+  background-color: rgb(138, 143, 142);
+  width: 60%;
+  margin: 0 auto;
+  height: 100vh;
 }
-
+.input{
+  width: 130px;
+  height: 30px;
+  padding: 5px;
+  text-align: center;
+  font-size: larger;
+}
+.item{
+  font-size: larger;
+  color: rgb(20, 2, 39);
+  background-color: rgb(132, 187, 224);
+padding-bottom: 50px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
