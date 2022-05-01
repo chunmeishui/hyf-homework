@@ -3,13 +3,15 @@ import { ApiTotalData } from "./SearchUsersList";
 import "../App.css";
 
 export const SearchUsersItem = () => {
+
   const userlist = useContext(ApiTotalData);
-  const itemApi = userlist.map((name) => {
-    return <h5>{name}</h5>;
+
+  const itemApi =()=> userlist.map((name,index) => {
+    return <h5 key={index}>{name}</h5>;
   });
   return (
     <>
-      <div className="item">{itemApi}</div>
+      <div className="item">{itemApi()}</div>
     </>
   );
 };

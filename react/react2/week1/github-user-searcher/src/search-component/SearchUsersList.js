@@ -10,7 +10,6 @@ export const SearchUsersList = () => {
 
   // take data from SearchMain input
   const query = useContext(usersContext);
-
   const api = `https://api.github.com/search/users?q=${query}`;
 
   useEffect(() => {
@@ -19,19 +18,20 @@ export const SearchUsersList = () => {
       return;
     }
     setLoading(true);
-    (async () => {
+    const fecthData = async () => {
       try {
-        const response = await (await fetch(api)).json();
-        const result = response.items.map((data) => data.login);
+        const fetchApi = await fetch(api);
+        const apiData = await fetchApi.json();
+        const result = apiData.items.map((data) => data.login);
         setApiTotalData(result);
-      } catch (err) {
-        throw err;
+      } catch (error) {
+        console.log(error);
       } finally {
         setLoading(false);
-        
       }
-    })();
-  }, [query, api]);
+    };
+    fecthData();
+  }, [api, query]);
 
   return (
     <>
@@ -46,3 +46,15 @@ export const SearchUsersList = () => {
     </>
   );
 };
+
+//   (async () => {
+//     try {
+//       const response = await (await fetch(api)).json();
+//       const result = response.items.map((data) => data.login);
+//       setApiTotalData(result);
+//     } catch (err) {
+//       throw err;
+//     } finally {
+//       setLoading(false);
+//     }
+//   })();
