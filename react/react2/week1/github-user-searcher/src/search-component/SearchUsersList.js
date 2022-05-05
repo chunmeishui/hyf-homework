@@ -21,9 +21,13 @@ export const SearchUsersList = () => {
     const fecthData = async () => {
       try {
         const fetchApi = await fetch(api);
-        const apiData = await fetchApi.json();
-        const result = apiData.items.map((data) => data.login);
-        setApiTotalData(result);
+        if (fetchApi.ok) {
+          const apiData = await fetchApi.json();
+          const result = apiData.items.map((data) => data.login);
+          setApiTotalData(result);
+        } else {
+          setApiTotalData([]);
+        }
       } catch (error) {
         console.log(error);
       } finally {
