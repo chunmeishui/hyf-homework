@@ -3,3 +3,7 @@ potato
 cabbage
 spicy
 eggplant
+spicy
+eggplant
+cucumber
+salad
